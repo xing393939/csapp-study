@@ -1,0 +1,7 @@
+# https://www.hahack.com/codes/cmake/
+cmake_minimum_required(VERSION 3.10)
+project(untitled)
+
+set(CMAKE_CXX_STANDARD 14)
+
+add_executable(1.1 easy/1.1.cpp)
