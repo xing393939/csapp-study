@@ -1,4 +1,4 @@
-### C 语言学习
+### CSAPP 学习
 
 #### 参考资料
-1. [Linux C 编程一站式学习](http://akaedu.github.io/book/index.html)
+1. [【读薄 CSAPP】](https://wdxtub.com/csapp/thin-csapp-0/2016/04/16/)
