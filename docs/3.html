@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>1.数据表示 · GitBook</title>
+        <title>1.内存和缓存 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="2.html" />
     
-    
-    <link rel="prev" href="../" />
+    <link rel="prev" href="2.html" />
     
 
     </head>
@@ -104,7 +102,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2" data-path="1.html">
+        <li class="chapter " data-level="1.2" data-path="1.html">
             
                 <a href="1.html">
             
@@ -130,7 +128,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4" data-path="3.html">
+        <li class="chapter active" data-level="1.4" data-path="3.html">
             
                 <a href="3.html">
             
@@ -173,7 +171,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >1.数据表示</a>
+        <a href=".." >1.内存和缓存</a>
     </h1>
 </div>
 
@@ -188,16 +186,92 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h3 id="&#x6570;&#x636E;&#x8868;&#x793A;">&#x6570;&#x636E;&#x8868;&#x793A;</h3>
-<h4 id="&#x6570;&#x636E;&#x5177;&#x4F53;&#x7684;&#x6392;&#x5217;&#x4E5F;&#x6709;&#x4E24;&#x79CD;&#x65B9;&#x5F0F;&#xFF1A;&#x5927;&#x7AEF;big-endian&#x4E0E;&#x5C0F;&#x7AEF;little-endian">&#x6570;&#x636E;&#x5177;&#x4F53;&#x7684;&#x6392;&#x5217;&#x4E5F;&#x6709;&#x4E24;&#x79CD;&#x65B9;&#x5F0F;&#xFF1A;&#x5927;&#x7AEF;(Big Endian)&#x4E0E;&#x5C0F;&#x7AEF;(Little Endian)</h4>
-<ol>
-<li>Internet &#x6570;&#x636E;&#x91C7;&#x7528;&#x5927;&#x7AEF;&#x89C4;&#x5219;&#xFF0C;&#x800C;&#x6211;&#x4EEC;&#x5E38;&#x89C1;&#x7684; x86 &#x6216; ARM &#x5904;&#x7406;&#x5668;&#x90FD;&#x91C7;&#x7528;&#x5C0F;&#x7AEF;&#x89C4;&#x5219;</li>
-<li>&#x5982;&#x679C;&#x4E00;&#x4E2A;&#x56DB;&#x5B57;&#x8282;&#x7684;&#x6570;&#x636E;&#x6307;&#x9488;&#x5730;&#x5740;&#x662F;0x100<ul>
-<li>&#x5927;&#x7AEF;&#x89C4;&#x5219;&#x662F;&#xFF1A;0x100&#xFF0C;0x101&#xFF0C;0x102&#xFF0C;0x103&#xFF0C;&#x4E5F;&#x6210;&#x5927;&#x7AEF;(&#x5C3E;)&#x89C4;&#x5219;</li>
-<li>&#x5C0F;&#x7AEF;&#x89C4;&#x5219;&#x662F;&#xFF1A;0x103&#xFF0C;0x102&#xFF0C;0x101&#xFF0C;0x100&#xFF0C;&#x4E5F;&#x6210;&#x5C0F;&#x7AEF;(&#x5C3E;)&#x89C4;&#x5219;</li>
-</ul>
-</li>
-</ol>
+                                <h3 id="&#x5185;&#x5B58;&#x548C;&#x7F13;&#x5B58;">&#x5185;&#x5B58;&#x548C;&#x7F13;&#x5B58;</h3>
+<h4 id="&#x7F13;&#x5B58;&#x7C7B;&#x578B;&#x5BF9;&#x6BD4;">&#x7F13;&#x5B58;&#x7C7B;&#x578B;&#x5BF9;&#x6BD4;</h4>
+<table>
+<thead>
+<tr>
+<th>&#x7F13;&#x5B58;&#x7C7B;&#x578B;</th>
+<th>&#x7F13;&#x5B58;&#x5185;&#x5BB9;</th>
+<th>&#x7F13;&#x5B58;&#x4F4D;&#x7F6E;</th>
+<th>&#x5EF6;&#x8FDF;(&#x65F6;&#x949F;&#x5468;&#x671F;)</th>
+<th>&#x7BA1;&#x7406;&#x8005;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&#x5BC4;&#x5B58;&#x5668;</td>
+<td>4-8 &#x5B57;&#x8282;&#x7684;&#x5B57;</td>
+<td>CPU &#x5185;&#x6838;</td>
+<td>0</td>
+<td>&#x7F16;&#x8BD1;&#x5668;</td>
+</tr>
+<tr>
+<td>TLB</td>
+<td>&#x5730;&#x5740;&#x7FFB;&#x8BD1;</td>
+<td>&#x82AF;&#x7247; TLB</td>
+<td>0</td>
+<td>&#x5185;&#x5B58;&#x7BA1;&#x7406;&#x5355;&#x5143;</td>
+</tr>
+<tr>
+<td>L1 &#x7F13;&#x5B58;</td>
+<td>64 &#x5B57;&#x8282;&#x7684;&#x5757;</td>
+<td>&#x82AF;&#x7247; L1 &#x7F13;&#x5B58;</td>
+<td>4</td>
+<td>&#x786C;&#x4EF6;</td>
+</tr>
+<tr>
+<td>L2 &#x7F13;&#x5B58;</td>
+<td>64 &#x5B57;&#x8282;&#x7684;&#x5757;</td>
+<td>&#x82AF;&#x7247; L2 &#x7F13;&#x5B58;</td>
+<td>10</td>
+<td>&#x786C;&#x4EF6;</td>
+</tr>
+<tr>
+<td>&#x865A;&#x62DF;&#x5185;&#x5B58;</td>
+<td>4 KB &#x7684;&#x9875;</td>
+<td>&#x4E3B;&#x5B58;</td>
+<td>100</td>
+<td>&#x786C;&#x4EF6;+&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;</td>
+</tr>
+<tr>
+<td>&#x7F13;&#x51B2;&#x533A;&#x7F13;&#x5B58;</td>
+<td></td>
+<td>&#x6587;&#x4EF6;&#x7684;&#x90E8;&#x5206;&#x5185;&#x5BB9;</td>
+<td>&#x4E3B;&#x5B58;</td>
+<td>100</td>
+<td>&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;</td>
+</tr>
+<tr>
+<td>&#x78C1;&#x76D8;&#x7F13;&#x5B58;</td>
+<td>&#x78C1;&#x76D8;&#x6247;&#x533A;</td>
+<td>&#x78C1;&#x76D8;&#x63A7;&#x5236;&#x5668;</td>
+<td>100,000</td>
+<td>&#x78C1;&#x76D8;&#x56FA;&#x4EF6;</td>
+</tr>
+<tr>
+<td>&#x7F51;&#x7EDC;&#x7F13;&#x51B2;&#x533A;&#x7F13;&#x5B58;</td>
+<td>&#x6587;&#x4EF6;&#x7684;&#x90E8;&#x5206;&#x5185;&#x5BB9;</td>
+<td>&#x672C;&#x5730;&#x78C1;&#x76D8;</td>
+<td>10,000,000</td>
+<td>NFS &#x5BA2;&#x6237;&#x7AEF;</td>
+</tr>
+<tr>
+<td>&#x6D4F;&#x89C8;&#x5668;&#x7F13;&#x5B58;</td>
+<td>&#x7F51;&#x9875;</td>
+<td>&#x672C;&#x5730;&#x78C1;&#x76D8;</td>
+<td>10,000,000</td>
+<td>&#x7F51;&#x7EDC;&#x6D4F;&#x89C8;&#x5668;</td>
+</tr>
+<tr>
+<td>Web &#x7F13;&#x5B58;</td>
+<td>&#x7F51;&#x9875;</td>
+<td>&#x8FDC;&#x7A0B;&#x670D;&#x52A1;&#x5668;&#x78C1;&#x76D8;</td>
+<td>1,000,000,000</td>
+<td>Web &#x4EE3;&#x7406;&#x670D;&#x52A1;&#x5668;</td>
+</tr>
+</tbody>
+</table>
 
                                 
                                 </section>
@@ -225,14 +299,10 @@
 
             
                 
-                <a href="../" class="navigation navigation-prev " aria-label="Previous page: Introduction">
+                <a href="2.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 1.机器指令与程序优化">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="2.html" class="navigation navigation-next " aria-label="Next page: 1.机器指令与程序优化">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -241,7 +311,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"1.数据表示","level":"1.2","depth":1,"next":{"title":"1.机器指令与程序优化","level":"1.3","depth":1,"path":"docs/2.md","ref":"docs/2.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"docs/1.md","mtime":"2020-12-15T02:13:13.350Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-15T02:13:44.938Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"1.内存和缓存","level":"1.4","depth":1,"previous":{"title":"1.机器指令与程序优化","level":"1.3","depth":1,"path":"docs/2.md","ref":"docs/2.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"docs/3.md","mtime":"2020-12-15T02:13:13.350Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-15T02:13:44.938Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
