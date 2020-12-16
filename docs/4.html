@@ -1,0 +1,334 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>4.链接 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="3.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">目录</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="1.html">
+            
+                <a href="1.html">
+            
+                    
+                    1.数据表示
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="2.html">
+            
+                <a href="2.html">
+            
+                    
+                    2.机器指令与程序优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="3.html">
+            
+                <a href="3.html">
+            
+                    
+                    3.内存和缓存
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5" data-path="4.html">
+            
+                <a href="4.html">
+            
+                    
+                    4.链接
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >4.链接</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h3 id="&#x94FE;&#x63A5;">&#x94FE;&#x63A5;</h3>
+<h4 id="c-&#x8BED;&#x8A00;&#x7684;&#x7F16;&#x8BD1;&#x8FC7;&#x7A0B;">C &#x8BED;&#x8A00;&#x7684;&#x7F16;&#x8BD1;&#x8FC7;&#x7A0B;</h4>
+<ol>
+<li>&#x9884;&#x5904;&#x7406;&#x5668;&#xFF1A;&#x5C06; C &#x8BED;&#x8A00;&#x4EE3;&#x7801;(da.c)&#x8F6C;&#x5316;&#x6210; da.i &#x6587;&#x4EF6;(gcc &#x2013;E)</li>
+<li>&#x7F16;&#x8BD1;&#x5668;&#xFF1A;C &#x8BED;&#x8A00;&#x4EE3;&#x7801;(da.c, wang.c)&#x7ECF;&#x8FC7;&#x7F16;&#x8BD1;&#x5668;&#x7684;&#x5904;&#x7406;(gcc -S)&#x6210;&#x4E3A;&#x6C47;&#x7F16;&#x4EE3;&#x7801;(da.s, wang.s)</li>
+<li>&#x6C47;&#x7F16;&#x5668;&#xFF1A;&#x6C47;&#x7F16;&#x4EE3;&#x7801;(da.s, wang.s)&#x7ECF;&#x8FC7;&#x6C47;&#x7F16;&#x5668;&#x7684;&#x5904;&#x7406;(gcc &#x6216; as)&#x6210;&#x4E3A;&#x5BF9;&#x8C61;&#x7A0B;&#x5E8F;(da.o, wang.o)</li>
+<li>&#x94FE;&#x63A5;&#x5668;&#xFF1A;&#x5BF9;&#x8C61;&#x7A0B;&#x5E8F;(da.o, wang.o)&#x4EE5;&#x53CA;&#x6240;&#x9700;&#x9759;&#x6001;&#x5E93;(lib.a)&#x7ECF;&#x8FC7;&#x94FE;&#x63A5;&#x5668;&#x7684;&#x5904;&#x7406;(gcc &#x6216; ld)&#x6700;&#x7EC8;&#x6210;&#x4E3A;&#x8BA1;&#x7B97;&#x673A;&#x53EF;&#x6267;&#x884C;&#x7684;&#x7A0B;&#x5E8F;</li>
+<li>&#x52A0;&#x8F7D;&#x5668;&#xFF1A;&#x5C06;&#x53EF;&#x6267;&#x884C;&#x7A0B;&#x5E8F;&#x52A0;&#x8F7D;&#x5230;&#x5185;&#x5B58;&#x5E76;&#x8FDB;&#x884C;&#x6267;&#x884C;&#xFF0C;loader &#x548C; ld-linux.so  </li>
+</ol>
+<h4 id="&#x7F16;&#x8BD1;&#x5668;&#x5C06;&#x9AD8;&#x7EA7;&#x8BED;&#x8A00;&#x6307;&#x4EE4;&#x8F6C;&#x6362;&#x4E3A;&#x529F;&#x80FD;&#x7B49;&#x6548;&#x7684;&#x6C47;&#x7F16;&#x4EE3;&#x7801;">&#x7F16;&#x8BD1;&#x5668;&#x5C06;&#x9AD8;&#x7EA7;&#x8BED;&#x8A00;&#x6307;&#x4EE4;&#x8F6C;&#x6362;&#x4E3A;&#x529F;&#x80FD;&#x7B49;&#x6548;&#x7684;&#x6C47;&#x7F16;&#x4EE3;&#x7801;</h4>
+<ol>
+<li>&#x6E90;&#x6587;&#x4EF6;&#x7684;&#x7F16;&#x8BD1;&#x8FC7;&#x7A0B;&#x5305;&#x542B;&#x4E24;&#x4E2A;&#x4E3B;&#x8981;&#x9636;&#x6BB5;</li>
+<li>&#x7B2C;&#x4E00;&#x4E2A;&#x9636;&#x6BB5;&#x662F;&#x9884;&#x5904;&#x7406;&#x9636;&#x6BB5;&#xFF1A;<ul>
+<li>&#x5B8F;&#x5B9A;&#x4E49;&#x6307;&#x4EE4;&#xFF0C;&#x5982; #define a b &#x8FD9;&#x79CD;&#x4F2A;&#x6307;&#x4EE4;&#xFF0C;&#x9884;&#x7F16;&#x8BD1;&#x6240;&#x8981;&#x505A;&#x7684;&#x662F;&#x5C06;&#x7A0B;&#x5E8F;&#x4E2D;&#x7684;&#x6240;&#x6709; a &#x7528; b &#x66FF;&#x6362;&#xFF0C;&#x4F46;&#x4F5C;&#x4E3A;&#x5B57;&#x7B26;&#x4E32;&#x5E38;&#x91CF;&#x7684; a &#x5219;&#x4E0D;&#x88AB;&#x66FF;&#x6362;&#x3002;&#x8FD8;&#x6709; #undef&#xFF0C;&#x5219;&#x5C06;&#x53D6;&#x6D88;&#x5BF9;&#x67D0;&#x4E2A;&#x5B8F;&#x7684;&#x5B9A;&#x4E49;&#xFF0C;&#x4F7F;&#x4EE5;&#x540E;&#x8BE5;&#x4E32;&#x7684;&#x51FA;&#x73B0;&#x4E0D;&#x518D;&#x88AB;&#x66FF;&#x6362;</li>
+<li>&#x6761;&#x4EF6;&#x7F16;&#x8BD1;&#x6307;&#x4EE4;&#xFF0C;&#x5982; #ifdef, #ifndef, #else, #elif, #endif&#x7B49;&#x3002;&#x9884;&#x7F16;&#x8BD1;&#x7A0B;&#x5E8F;&#x5C06;&#x6839;&#x636E;&#x6761;&#x4EF6;&#x5224;&#x65AD;&#xFF0C;&#x5C06;&#x90A3;&#x4E9B;&#x4E0D;&#x5FC5;&#x8981;&#x7684;&#x8FC7;&#x6EE4;&#x6389;</li>
+<li>&#x7279;&#x6B8A;&#x7B26;&#x53F7;&#xFF0C;&#x9884;&#x7F16;&#x8BD1;&#x7A0B;&#x5E8F;&#x53EF;&#x4EE5;&#x8BC6;&#x522B;&#x4E00;&#x4E9B;&#x7279;&#x6B8A;&#x7684;&#x7B26;&#x53F7;&#x3002;&#x4F8B;&#x5982;&#x5728;&#x6E90;&#x7A0B;&#x5E8F;&#x4E2D;&#x51FA;&#x73B0;&#x7684; LINE &#x6807;&#x8BC6;&#x5C06;&#x88AB;&#x89E3;&#x91CA;&#x4E3A;&#x5F53;&#x524D;&#x884C;&#x53F7;&#xFF08;&#x5341;&#x8FDB;&#x5236;&#x6570;&#xFF09;&#xFF0C;FILE &#x5219;&#x88AB;&#x89E3;&#x91CA;&#x4E3A;&#x5F53;&#x524D;&#x88AB;&#x7F16;&#x8BD1;&#x7684;C&#x6E90;&#x7A0B;&#x5E8F;&#x7684;&#x540D;&#x79F0;</li>
+<li>&#x5934;&#x6587;&#x4EF6;&#x5305;&#x542B;&#x6307;&#x4EE4;&#xFF0C;&#x5982; #include &quot;FileName&quot; &#x3002;&#x8BE5;&#x6307;&#x4EE4;&#x5C06;&#x5934;&#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x5B9A;&#x4E49;&#x7EDF;&#x7EDF;&#x90FD;&#x52A0;&#x5165;&#x5230;&#x5B83;&#x6240;&#x4EA7;&#x751F;&#x7684;&#x8F93;&#x51FA;&#x6587;&#x4EF6;&#x4E2D;&#xFF0C;&#x4EE5;&#x4F9B;&#x7F16;&#x8BD1;&#x7A0B;&#x5E8F;&#x5BF9;&#x4E4B;&#x8FDB;&#x884C;&#x5904;&#x7406;<ol>
+<li>&#x6240;&#x6709;&#x5934;&#x6587;&#x4EF6;&#x7684;&#x641C;&#x5BFB;&#x4F1A;&#x4ECE; gcc -I &#x5F00;&#x59CB;</li>
+<li>&#x7136;&#x540E;&#x627E;&#x73AF;&#x5883;&#x53D8;&#x91CF; C_INCLUDE_PATH, CPLUS_INCLUDE_PATH, OBJC_INCLUDE_PATH &#x6307;&#x5B9A;&#x7684;&#x8DEF;&#x5F84;</li>
+<li>&#x518D;&#x627E;&#x9ED8;&#x8BA4;&#x76EE;&#x5F55;(/usr/include, /usr/local/include, /usr/lib/gcc-lib/i386-linux/2.95.2/include &#x7B49;&#x7B49;)</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>&#x7B2C;&#x4E8C;&#x4E2A;&#x9636;&#x6BB5;&#x7F16;&#x8BD1;&#x3001;&#x4F18;&#x5316;&#x9636;&#x6BB5;&#xFF1A;&#x901A;&#x8FC7;&#x8BCD;&#x6CD5;&#x5206;&#x6790;&#x548C;&#x8BED;&#x6CD5;&#x5206;&#x6790;&#xFF0C;&#x7FFB;&#x8BD1;&#x6210;&#x7B49;&#x4EF7;&#x7684;&#x4E2D;&#x95F4;&#x4EE3;&#x7801;&#x8868;&#x793A;&#x6216;&#x6C47;&#x7F16;&#x4EE3;&#x7801;&#x3002;</li>
+</ol>
+<h4 id="&#x94FE;&#x63A5;&#x5668;&#x4E3B;&#x8981;&#x505A;&#x4E24;&#x4EF6;&#x4E8B;&#x60C5;">&#x94FE;&#x63A5;&#x5668;&#x4E3B;&#x8981;&#x505A;&#x4E24;&#x4EF6;&#x4E8B;&#x60C5;</h4>
+<ol>
+<li>&#x7B2C;&#x4E00;&#x6B65;&#xFF1A;&#x7B26;&#x53F7;&#x89E3;&#x6790;&#x3002;&#x4EE3;&#x7801;&#x4E2D;&#x58F0;&#x660E;&#x7684;&#x53D8;&#x91CF;&#x53CA;&#x51FD;&#x6570;&#xFF0C;&#x4E4B;&#x540E;&#x4F1A;&#x8C03;&#x7528;&#x7684;&#x53D8;&#x91CF;&#x53CA;&#x51FD;&#x6570;&#xFF0C;&#x6240;&#x6709;&#x7684;&#x7B26;&#x53F7;&#x58F0;&#x660E;&#x90FD;&#x4F1A;&#x88AB;&#x4FDD;&#x5B58;&#x5728;&#x7B26;&#x53F7;&#x8868;(symbol table)<ul>
+<li>&#x94FE;&#x63A5;&#x5668;&#x5B9E;&#x9645;&#x4E0A;&#x4F1A;&#x5904;&#x7406;&#x4E09;&#x79CD;&#x4E0D;&#x540C;&#x7684;&#x7B26;&#x53F7;&#xFF0C;&#x5BF9;&#x5E94;&#x4E8E;&#x4EE3;&#x7801;&#x4E2D;&#x4E09;&#x79CD;&#x4E0D;&#x540C;&#x5199;&#x6CD5;&#xFF1A;</li>
+<li>&#x5168;&#x5C40;&#x7B26;&#x53F7; Global symbols&#xFF1A;&#x5728;&#x5F53;&#x524D;&#x6A21;&#x5757;&#x4E2D;&#x5B9A;&#x4E49;&#xFF0C;&#x4E14;&#x53EF;&#x4EE5;&#x88AB;&#x5176;&#x4ED6;&#x4EE3;&#x7801;&#x5F15;&#x7528;&#x7684;&#x7B26;&#x53F7;&#xFF0C;&#x4F8B;&#x5982;&#x975E;&#x9759;&#x6001; C &#x51FD;&#x6570;&#x548C;&#x975E;&#x9759;&#x6001;&#x5168;&#x5C40;&#x53D8;&#x91CF;</li>
+<li>&#x5916;&#x90E8;&#x7B26;&#x53F7; External symbols&#xFF1A;&#x540C;&#x6837;&#x662F;&#x5168;&#x5C40;&#x7B26;&#x53F7;&#xFF0C;&#x4F46;&#x662F;&#x662F;&#x5728;&#x5176;&#x4ED6;&#x6A21;&#x5757;&#xFF08;&#x4E5F;&#x5C31;&#x662F;&#x5176;&#x4ED6;&#x7684;&#x6E90;&#x4EE3;&#x7801;&#xFF09;&#x4E2D;&#x5B9A;&#x4E49;&#x7684;&#xFF0C;&#x4F46;&#x662F;&#x53EF;&#x4EE5;&#x5728;&#x5F53;&#x524D;&#x6A21;&#x5757;&#x4E2D;&#x5F15;&#x7528;</li>
+<li>&#x672C;&#x5730;&#x7B26;&#x53F7; Local symbols&#xFF1A;&#x5728;&#x5F53;&#x524D;&#x6A21;&#x5757;&#x4E2D;&#x5B9A;&#x4E49;&#xFF0C;&#x53EA;&#x80FD;&#x88AB;&#x5F53;&#x524D;&#x6A21;&#x5757;&#x5F15;&#x7528;&#x7684;&#x7B26;&#x53F7;&#xFF0C;&#x4F8B;&#x5982;&#x9759;&#x6001;&#x51FD;&#x6570;&#x548C;&#x9759;&#x6001;&#x5168;&#x5C40;&#x53D8;&#x91CF;</li>
+</ul>
+</li>
+<li>&#x7B2C;&#x4E8C;&#x6B65;&#xFF1A;&#x91CD;&#x5B9A;&#x4F4D;&#x3002;&#x628A;&#x539F;&#x5148;&#x5206;&#x5F00;&#x7684;&#x4EE3;&#x7801;&#x548C;&#x6570;&#x636E;&#x7247;&#x6BB5;&#xFF08;&#x591A;&#x4E2A;.o&#x6587;&#x4EF6;&#xFF09;&#x6C47;&#x603B;&#x6210;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;</li>
+</ol>
+<h4 id="&#x5BF9;&#x8C61;&#x6587;&#x4EF6;object-file&#x6709;&#x4E09;&#x79CD;&#x5F62;&#x5F0F;">&#x5BF9;&#x8C61;&#x6587;&#x4EF6;(Object File)&#x6709;&#x4E09;&#x79CD;&#x5F62;&#x5F0F;</h4>
+<ol>
+<li>&#x53EF;&#x91CD;&#x5B9A;&#x4F4D;&#x76EE;&#x6807;&#x6587;&#x4EF6; Relocatable object file (.o &#x6587;&#x4EF6;)</li>
+<li>&#x53EF;&#x6267;&#x884C;&#x76EE;&#x6807;&#x6587;&#x4EF6; Executable object file (a.out &#x6587;&#x4EF6;)</li>
+<li>&#x5171;&#x4EAB;&#x76EE;&#x6807;&#x6587;&#x4EF6; Shared object file (.so &#x6587;&#x4EF6;)</li>
+</ol>
+<h4 id="&#x5BF9;&#x8C61;&#x6587;&#x4EF6;&#x7684;elf&#x683C;&#x5F0F;&#x7EC4;&#x6210;">&#x5BF9;&#x8C61;&#x6587;&#x4EF6;&#x7684;ELF&#x683C;&#x5F0F;&#x7EC4;&#x6210;</h4>
+<ol>
+<li>ELF header&#xFF1A;&#x5305;&#x542B; word size, byte ordering, file type (.o, exec, .so), machine type</li>
+<li>Segment header table&#xFF1A;&#x5305;&#x542B; page size, segments(sections), segment sizes</li>
+<li>.text section&#xFF1A;&#x4EE3;&#x7801;&#x90E8;&#x5206;</li>
+<li>.rodata section&#xFF1A;&#x53EA;&#x8BFB;&#x6570;&#x636E;&#x90E8;&#x5206;&#xFF0C;&#x4F8B;&#x5982;&#x8DF3;&#x8F6C;&#x8868;</li>
+<li>.data section&#xFF1A;&#x521D;&#x59CB;&#x5316;&#x7684;&#x5168;&#x5C40;&#x53D8;&#x91CF;</li>
+<li>.bss section&#xFF1A;&#x672A;&#x521D;&#x59CB;&#x5316;&#x7684;&#x5168;&#x5C40;&#x53D8;&#x91CF;</li>
+<li>.symtab section&#xFF1A;&#x5305;&#x542B; symbol table, procudure &#x548C; static variable names &#x4EE5;&#x53CA; section names &#x548C; location</li>
+<li>.rel.txt section&#xFF1A;.text section &#x7684;&#x91CD;&#x5B9A;&#x4F4D;&#x4FE1;&#x606F;</li>
+<li>.rel.data section&#xFF1A;.data section &#x7684;&#x91CD;&#x5B9A;&#x4F4D;&#x4FE1;&#x606F;</li>
+<li>.debug section&#xFF1A;&#x5305;&#x542B; symbolic debugging (gcc -g) &#x7684;&#x4FE1;&#x606F;</li>
+<li>Section header table&#xFF1A;&#x6BCF;&#x4E2A; section &#x7684;&#x5927;&#x5C0F;&#x548C;&#x504F;&#x79FB;&#x91CF;</li>
+</ol>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="3.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 3.内存和缓存">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"4.链接","level":"1.5","depth":1,"previous":{"title":"3.内存和缓存","level":"1.4","depth":1,"path":"docs/3.md","ref":"docs/3.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"docs/4.md","mtime":"2020-12-16T02:33:27.388Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-16T02:34:02.466Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
