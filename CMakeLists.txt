@@ -6,3 +6,4 @@ set(CMAKE_CXX_STANDARD 14)
 
 add_executable(1.1 easy/1.1.cpp)
 add_executable(2.1 easy/2.1.cpp)
+add_executable(4.1 easy/4.1.cpp)
