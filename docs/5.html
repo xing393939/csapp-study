@@ -235,9 +235,31 @@
 <li>&#x540C;&#x6B65;&#x5F02;&#x5E38;&#xFF0C;&#x6267;&#x884C;&#x67D0;&#x6761;&#x6307;&#x4EE4;&#x6240;&#x5BFC;&#x81F4;&#x7684;&#x4E8B;&#x4EF6;&#xFF0C;&#x5206;&#x4E3A;&#x9677;&#x9631;(Trap)&#x3001;&#x6545;&#x969C;(Fault)&#x548C;&#x7EC8;&#x6B62;(Abort)&#x4E09;&#x79CD;&#x60C5;&#x51B5;</li>
 </ul>
 </li>
-<li>&#x8FDB;&#x7A0B;&#x5207;&#x6362;(Process Context Switch)&#xFF0C;&#x53EF;&#x4EE5;&#x770B;&#x505A;&#x662F;&#x4E00;&#x4E2A;&#x4ECE;&#x786C;&#x4EF6;&#x8FC7;&#x6E21;&#x5230;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#xFF0C;&#x518D;&#x4ECE;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x8FC7;&#x6E21;&#x5230;&#x8BED;&#x8A00;&#x5E93;&#x7684;&#x8FC7;&#x7A0B;</li>
-<li>&#x4FE1;&#x53F7;(Signal)&#xFF0C;&#x53EF;&#x4EE5;&#x770B;&#x505A;&#x662F;&#x4E00;&#x4E2A;&#x4ECE;&#x786C;&#x4EF6;&#x8FC7;&#x6E21;&#x5230;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#xFF0C;&#x518D;&#x4ECE;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x8FC7;&#x6E21;&#x5230;&#x8BED;&#x8A00;&#x5E93;&#x7684;&#x8FC7;&#x7A0B;</li>
-<li>&#x975E;&#x672C;&#x5730;&#x8DF3;&#x8F6C;(Nonlocal Jumps)&#xFF0C; &#x7531;C &#x8FD0;&#x884C;&#x65F6;&#x5E93;&#x4E2D;&#x5B9E;&#x73B0;</li>
+<li>&#x8FDB;&#x7A0B;&#x5207;&#x6362;(Process Context Switch)&#xFF0C;&#x53EF;&#x4EE5;&#x770B;&#x505A;&#x662F;&#x4E00;&#x4E2A;&#x4ECE;&#x786C;&#x4EF6;&#x8FC7;&#x6E21;&#x5230;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#xFF0C;&#x518D;&#x4ECE;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x8FC7;&#x6E21;&#x5230;&#x8BED;&#x8A00;&#x5E93;&#x7684;&#x8FC7;&#x7A0B;<ul>
+<li>&#x5207;&#x6362;&#x8FDB;&#x7A0B;&#x65F6;&#xFF0C;&#x5185;&#x5B58;&#x4E2D;&#x9700;&#x8981;&#x53E6;&#x4E00;&#x5757;&#x533A;&#x57DF;&#x6765;&#x4FDD;&#x5B58;&#x5F53;&#x524D;&#x7684;&#x5BC4;&#x5B58;&#x5668;&#x503C;&#xFF0C;&#x4EE5;&#x4FBF;&#x4E0B;&#x6B21;&#x6267;&#x884C;&#x7684;&#x65F6;&#x5019;&#x8FDB;&#x884C;&#x6062;&#x590D;&#xFF08;&#x4E5F;&#x5C31;&#x662F;&#x6240;&#x8C13;&#x7684;&#x4E0A;&#x4E0B;&#x6587;&#x5207;&#x6362;&#xFF09;</li>
+</ul>
+</li>
+<li>&#x4FE1;&#x53F7;(Signal)&#xFF0C;&#x53EF;&#x4EE5;&#x770B;&#x505A;&#x662F;&#x4E00;&#x4E2A;&#x4ECE;&#x786C;&#x4EF6;&#x8FC7;&#x6E21;&#x5230;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#xFF0C;&#x518D;&#x4ECE;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x8FC7;&#x6E21;&#x5230;&#x8BED;&#x8A00;&#x5E93;&#x7684;&#x8FC7;&#x7A0B;<ul>
+<li>&#x9700;&#x8981;&#x6CE8;&#x610F;&#x8FDB;&#x7A0B;&#x6709;&#x4E00;&#x4E2A; SIGCHLD &#x4FE1;&#x53F7;&#x5904;&#x4E8E;&#x7B49;&#x5F85;&#x72B6;&#x6001;&#xFF0C;&#x90A3;&#x4E48;&#x4E4B;&#x540E;&#x8FDB;&#x6765;&#x7684; SIGCHLD &#x4FE1;&#x53F7;&#x90FD;&#x4F1A;&#x88AB;&#x76F4;&#x63A5;&#x6254;&#x6389;&#x3002;</li>
+<li>&#x4FE1;&#x53F7;&#x5904;&#x7406;&#x5668;&#xFF1A;&#x6BCF;&#x4E2A;&#x4FE1;&#x53F7;&#x7C7B;&#x578B;&#x90FD;&#x6709;&#x4E00;&#x4E2A;&#x9884;&#x5B9A;&#x4E49;&#x7684;&#x9ED8;&#x8BA4;&#x52A8;&#x4F5C;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x81EA;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x4FE1;&#x53F7;&#x5904;&#x7406;&#x5668;&#x3002;&#x4FE1;&#x53F7;&#x5904;&#x7406;&#x5668;&#x4E5F;&#x53EF;&#x4EE5;&#x88AB;&#x5176;&#x4ED6;&#x7684;&#x4FE1;&#x53F7;&#x5904;&#x7406;&#x5668;&#x4E2D;&#x65AD;&#x3002;&#x6240;&#x6709;&#x7684;&#x4E0A;&#x4E0B;&#x6587;&#x5207;&#x6362;&#x90FD;&#x662F;&#x901A;&#x8FC7;&#x8C03;&#x7528;&#x67D0;&#x4E2A;&#x5F02;&#x5E38;&#x5904;&#x7406;&#x5668;&#x5B8C;&#x6210;&#x7684;&#x3002;</li>
+<li>&#x5F02;&#x6B65;&#x4FE1;&#x53F7;&#x5B89;&#x5168;&#x51FD;&#x6570;&#x662F;&#x6307;&#xFF1A;<ol>
+<li>&#x6240;&#x6709;&#x7684;&#x53D8;&#x91CF;&#x90FD;&#x4FDD;&#x5B58;&#x5728;&#x6808;&#x5E27;&#x4E2D;&#x7684;&#x51FD;&#x6570;</li>
+<li>&#x4E0D;&#x4F1A;&#x88AB;&#x4FE1;&#x53F7;&#x4E2D;&#x65AD;&#x7684;&#x51FD;&#x6570;</li>
+</ol>
+</li>
+<li>Posix &#x6807;&#x51C6;&#x6307;&#x5B9A;&#x4E86; 117 &#x4E2A;&#x5F02;&#x6B65;&#x4FE1;&#x53F7;&#x5B89;&#x5168;&#x7684;&#x51FD;&#x6570;  </li>
+</ul>
+</li>
+<li>&#x975E;&#x672C;&#x5730;&#x8DF3;&#x8F6C;(Nonlocal Jumps)&#xFF0C; &#x7531;C &#x8FD0;&#x884C;&#x65F6;&#x5E93;&#x4E2D;&#x5B9E;&#x73B0;<ul>
+<li>&#x672C;&#x5730;&#x8DF3;&#x8F6C;&#xFF1A;goto&#x8BED;&#x53E5;&#xFF0C;&#x4E0D;&#x80FD;&#x4ECE;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x8DF3;&#x8F6C;&#x5230;&#x53E6;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x4E2D;</li>
+<li>&#x975E;&#x672C;&#x5730;&#x8DF3;&#x8F6C;&#xFF1A;<ol>
+<li>int setjmp(jmp_buf env) &#x4FDD;&#x5B58;&#x5F53;&#x524D;&#x7A0B;&#x5E8F;&#x7684;&#x5806;&#x6808;&#x4E0A;&#x4E0B;&#x6587;&#x73AF;&#x5883;&#xFF0C;&#x4EC5;&#x5728;&#x8C03;&#x7528;setjmp&#x7684;&#x51FD;&#x6570;&#x5185;&#x6709;&#x6548;</li>
+<li>void longjmp(jmp_buf env, int val) &#x5C06;&#x4F1A;&#x6062;&#x590D;&#x7531; setjmp &#x4FDD;&#x5B58;&#x7684;&#x7A0B;&#x5E8F;&#x5806;&#x6808;&#x4E0A;&#x4E0B;&#x6587;&#xFF0C;&#x5373;&#x7A0B;&#x5E8F;&#x4ECE;&#x8C03;&#x7528; setjmp &#x5904;&#x91CD;&#x65B0;&#x5F00;&#x59CB;&#x6267;&#x884C;&#x3002;&#x4F20;val&#x5C06;&#x4F53;&#x73B0;&#x5728;setjmp&#x7684;&#x8FD4;&#x56DE;&#x503C;&#x4E0A;</li>
+<li>longjmp &#x7684;&#x65F6;&#x5019;&#xFF0C;&#x51FD;&#x6570;&#x5FC5;&#x987B;&#x5728;&#x6808;&#x4E2D;&#xFF08;&#x4E5F;&#x5C31;&#x662F;&#x8FD8;&#x6CA1;&#x5B8C;&#x6210;&#xFF09;&#x624D;&#x53EF;&#x4EE5;&#x8FDB;&#x884C;&#x8DF3;&#x8F6C;&#x3002;&#x5982;&#x679C;&#x51FD;&#x6570;&#x5DF2;&#x7ECF;&#x5B8C;&#x6210;&#xFF0C;&#x5BF9;&#x5E94;&#x7684;&#x6808;&#x5E27;&#x5728;&#x5185;&#x5B58;&#x4E2D;&#x5DF2;&#x7ECF;&#x88AB;&#x6E05;&#x7406;&#xFF0C;&#x5219;&#x4E0D;&#x80FD;&#x8DF3;&#x8F6C;&#x3002;</li>
+</ol>
+</li>
+</ul>
+</li>
 </ol>
 
                                 
@@ -278,7 +300,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"5.异常控制流 - 不同进程间的切换与沟通","level":"1.6","depth":1,"previous":{"title":"4.链接","level":"1.5","depth":1,"path":"docs/4.md","ref":"docs/4.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"docs/5.md","mtime":"2020-12-18T03:35:31.891Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-18T03:35:57.400Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"5.异常控制流 - 不同进程间的切换与沟通","level":"1.6","depth":1,"previous":{"title":"4.链接","level":"1.5","depth":1,"path":"docs/4.md","ref":"docs/4.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"docs/5.md","mtime":"2020-12-18T08:02:20.387Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-18T08:02:52.808Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
