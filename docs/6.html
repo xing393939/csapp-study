@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>1.数据表示 · GitBook</title>
+        <title>6.系统的输入输出 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="2.html" />
     
-    
-    <link rel="prev" href="../" />
+    <link rel="prev" href="5.html" />
     
 
     </head>
@@ -104,7 +102,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2" data-path="1.html">
+        <li class="chapter " data-level="1.2" data-path="1.html">
             
                 <a href="1.html">
             
@@ -169,7 +167,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.7" data-path="6.html">
+        <li class="chapter active" data-level="1.7" data-path="6.html">
             
                 <a href="6.html">
             
@@ -212,7 +210,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >1.数据表示</a>
+        <a href=".." >6.系统的输入输出</a>
     </h1>
 </div>
 
@@ -227,13 +225,28 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h3 id="&#x6570;&#x636E;&#x8868;&#x793A;">&#x6570;&#x636E;&#x8868;&#x793A;</h3>
-<h4 id="&#x6570;&#x636E;&#x5177;&#x4F53;&#x7684;&#x6392;&#x5217;&#x4E5F;&#x6709;&#x4E24;&#x79CD;&#x65B9;&#x5F0F;&#xFF1A;&#x5927;&#x7AEF;big-endian&#x4E0E;&#x5C0F;&#x7AEF;little-endian">&#x6570;&#x636E;&#x5177;&#x4F53;&#x7684;&#x6392;&#x5217;&#x4E5F;&#x6709;&#x4E24;&#x79CD;&#x65B9;&#x5F0F;&#xFF1A;&#x5927;&#x7AEF;(Big Endian)&#x4E0E;&#x5C0F;&#x7AEF;(Little Endian)</h4>
+                                <h3 id="&#x7CFB;&#x7EDF;&#x7684;&#x8F93;&#x5165;&#x8F93;&#x51FA;">&#x7CFB;&#x7EDF;&#x7684;&#x8F93;&#x5165;&#x8F93;&#x51FA;</h3>
+<h4 id="&#x6587;&#x4EF6;&#x79CD;&#x7C7B;">&#x6587;&#x4EF6;&#x79CD;&#x7C7B;</h4>
 <ol>
-<li>Internet &#x6570;&#x636E;&#x91C7;&#x7528;&#x5927;&#x7AEF;&#x89C4;&#x5219;&#xFF0C;&#x800C;&#x6211;&#x4EEC;&#x5E38;&#x89C1;&#x7684; x86 &#x6216; ARM &#x5904;&#x7406;&#x5668;&#x90FD;&#x91C7;&#x7528;&#x5C0F;&#x7AEF;&#x89C4;&#x5219;</li>
-<li>&#x5982;&#x679C;&#x4E00;&#x4E2A;&#x56DB;&#x5B57;&#x8282;&#x7684;&#x6570;&#x636E;&#x6307;&#x9488;&#x5730;&#x5740;&#x662F;0x100<ul>
-<li>&#x5927;&#x7AEF;&#x89C4;&#x5219;&#x662F;&#xFF1A;0x100&#xFF0C;0x101&#xFF0C;0x102&#xFF0C;0x103&#xFF0C;&#x4E5F;&#x6210;&#x5927;&#x7AEF;(&#x5C3E;)&#x89C4;&#x5219;</li>
-<li>&#x5C0F;&#x7AEF;&#x89C4;&#x5219;&#x662F;&#xFF1A;0x103&#xFF0C;0x102&#xFF0C;0x101&#xFF0C;0x100&#xFF0C;&#x4E5F;&#x6210;&#x5C0F;&#x7AEF;(&#x5C3E;)&#x89C4;&#x5219;</li>
+<li>elf&#x6587;&#x4EF6;</li>
+<li>&#x666E;&#x901A;&#x6587;&#x4EF6;<ul>
+<li>&#x6587;&#x672C;&#x6587;&#x4EF6;&#xFF1A;&#x53EA;&#x5305;&#x542B; ASCII &#x6216; Unicode &#x5B57;&#x7B26;&#x3002;&#x9664;&#x6B64;&#x4E4B;&#x5916;&#x7684;&#x90FD;&#x662F;&#x4E8C;&#x8FDB;&#x5236;&#x6587;&#x4EF6;</li>
+<li>&#x4E8C;&#x8FDB;&#x5236;&#x6587;&#x4EF6;&#xFF1A;&#x5BF9;&#x8C61;&#x6587;&#x4EF6;, JPEG &#x56FE;&#x7247;, &#x7B49;&#x7B49;</li>
+</ul>
+</li>
+<li>&#x76EE;&#x5F55;&#xFF1A;&#x6BCF;&#x4E2A;&#x76EE;&#x5F55;&#x81F3;&#x5C11;&#x5305;&#x542B;&#x4E24;&#x6761;&#x8BB0;&#x5F55;&#xFF1A;.(dot) &#x5F53;&#x524D;&#x76EE;&#x5F55;&#xFF1B;..(dot dot) &#x4E0A;&#x4E00;&#x5C42;&#x76EE;&#x5F55;</li>
+<li>dup2(oldfd, newfd) &#x8F93;&#x5165;&#x91CD;&#x5B9A;&#x5411;&#xFF0C;&#x52A0;&#x4E0A;oldfd&#x662F;&#x6807;&#x51C6;&#x8F93;&#x51FA;&#xFF0C;newfd&#x662F;&#x6587;&#x4EF6;&#xFF0C;&#x8868;&#x793A;&#x628A;&#x6807;&#x51C6;&#x8F93;&#x51FA;&#x91CD;&#x5B9A;&#x5411;&#x5230;&#x6587;&#x4EF6;</li>
+</ol>
+<h4 id="&#x4E24;&#x79CD;-io-&#x65B9;&#x6CD5;">&#x4E24;&#x79CD; I/O &#x65B9;&#x6CD5;</h4>
+<ol>
+<li>Unix I/O: open, read, write, lseek, stat, close&#x3002;&#x51FD;&#x6570;&#x90FD;&#x662F;&#x90FD;&#x662F;&#x5F02;&#x6B65;&#x4FE1;&#x53F7;&#x5B89;&#x5168;&#x3002;<ul>
+<li>&#x56E0;&#x4E3A;&#x6BD4;&#x8F83;&#x5E95;&#x5C42;&#x548C;&#x57FA;&#x7840;&#x7684;&#x7F18;&#x6545;&#xFF0C;&#x9700;&#x8981;&#x5904;&#x7406;&#x7684;&#x60C5;&#x51B5;&#x975E;&#x5E38;&#x591A;&#xFF0C;&#x5F88;&#x5BB9;&#x6613;&#x51FA;&#x9519;&#x3002;</li>
+<li>&#x9AD8;&#x6548;&#x7387;&#x7684;&#x8BFB;&#x5199;&#x9700;&#x8981;&#x7528;&#x5230;&#x7F13;&#x51B2;&#x533A;&#xFF0C;&#x540C;&#x6837;&#x5BB9;&#x6613;&#x51FA;&#x9519;&#x3002;</li>
+</ul>
+</li>
+<li>&#x6807;&#x51C6; C I/O: fopen, fdopen, fread, fwrite, fgets, fputs, fflush, fseek, fclose&#x7B49;&#x3002;&#x51FD;&#x6570;&#x90FD;&#x4E0D;&#x662F;&#x5F02;&#x6B65;&#x4FE1;&#x53F7;&#x5B89;&#x5168;&#x7684;&#x3002;<ul>
+<li>&#x63D0;&#x4F9B;&#x4E86;&#x5E26;&#x7F13;&#x5B58;&#x8BBF;&#x95EE;&#x6587;&#x4EF6;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x4F7F;&#x7528;&#x7684;&#x65F6;&#x5019;&#x51E0;&#x4E4E;&#x4E0D;&#x7528;&#x8003;&#x8651;&#x592A;&#x591A;</li>
+<li>&#x8981;&#x5F97;&#x5230;&#x6587;&#x4EF6;&#x7684;&#x5143;&#x4FE1;&#x606F;&#x65F6;&#xFF0C;&#x5C31;&#x8FD8;&#x662F;&#x5F97;&#x4F7F;&#x7528; Unix I/O &#x4E2D;&#x7684; stat &#x51FD;&#x6570;</li>
 </ul>
 </li>
 </ol>
@@ -264,14 +277,10 @@
 
             
                 
-                <a href="../" class="navigation navigation-prev " aria-label="Previous page: Introduction">
+                <a href="5.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 5.异常控制流 - 不同进程间的切换与沟通">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="2.html" class="navigation navigation-next " aria-label="Next page: 2.机器指令与程序优化">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -280,7 +289,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"1.数据表示","level":"1.2","depth":1,"next":{"title":"2.机器指令与程序优化","level":"1.3","depth":1,"path":"docs/2.md","ref":"docs/2.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"docs/1.md","mtime":"2020-12-20T07:34:47.131Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-20T07:35:12.095Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"6.系统的输入输出","level":"1.7","depth":1,"previous":{"title":"5.异常控制流 - 不同进程间的切换与沟通","level":"1.6","depth":1,"path":"docs/5.md","ref":"docs/5.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"docs/6.md","mtime":"2020-12-20T07:34:47.131Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-20T07:35:12.095Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
