@@ -368,6 +368,168 @@
 </li>
 </ol>
 <h4 id="&#x534F;&#x8BAE;&#x68EE;&#x6797;-&#x4F20;&#x8F93;&#x5C42;">&#x534F;&#x8BAE;&#x68EE;&#x6797;-&#x4F20;&#x8F93;&#x5C42;</h4>
+<ol>
+<li>&#x4F20;&#x8F93;&#x5C42;&#x7684;&#x534F;&#x8BAE;&#xFF1A;TCP&#x3001;UDP&#x3001;SCTP&#x7B49;</li>
+<li>&#x5728;TCP&#x534F;&#x8BAE;&#x4E2D;&#xFF1A;<ul>
+<li>&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x8FDE;&#x63A5;(ip+&#x7AEF;&#x53E3;&#xFF0C;&#x63E1;&#x624B;&#x548C;&#x6325;&#x624B;)&#x8BB0;&#x5F55;TCP&#x4E24;&#x7AEF;&#x7684;&#x72B6;&#x6001;</li>
+<li>&#x4F7F;&#x7528;&#x7F16;&#x53F7;&#x548C;&#x5206;&#x6BB5;&#x5B9E;&#x73B0;&#x4E86;TCP&#x4F20;&#x8F93;&#x7684;&#x6709;&#x5E8F;</li>
+<li>&#x4F7F;&#x7528;advertised window&#x6765;&#x5B9E;&#x73B0;&#x4E86;&#x53D1;&#x9001;&#x65B9;&#x548C;&#x63A5;&#x6536;&#x65B9;&#x5904;&#x7406;&#x80FD;&#x529B;&#x7684;&#x5339;&#x914D;</li>
+<li>&#x5E76;&#x4F7F;&#x7528;&#x91CD;&#x590D;&#x53D1;&#x9001;&#x6765;&#x5B9E;&#x73B0;TCP&#x4F20;&#x8F93;&#x7684;&#x53EF;&#x9760;&#x6027;&#x3002;</li>
+</ul>
+</li>
+<li>&#x6ED1;&#x52A8;&#x7A97;&#x53E3;&#xFF1A;<ol>
+<li>&#x53D1;&#x9001;&#x65B9;&#x7684;&#x6ED1;&#x52A8;&#x7A97;&#x53E3;&#xFF0C;&#x662F;&#x5DF2;&#x53D1;&#x9001;&#x7B49;&#x5F85;ACK&#x7684;&#x7247;&#x6BB5;&#x3001;&#x51C6;&#x5907;&#x53D1;&#x9001;&#x7684;&#x7247;&#x6BB5;</li>
+<li>&#x63A5;&#x53D7;&#x65B9;&#x7684;&#x6ED1;&#x52A8;&#x7A97;&#x53E3;&#xFF0C;&#x662F;&#x671F;&#x671B;&#x63A5;&#x6536;&#x7684;&#x7247;&#x6BB5;&#x3001;&#x5DF2;&#x63A5;&#x53D7;&#x51C6;&#x5907;&#x53D1;ACK&#x7684;&#x7247;&#x6BB5;&#x3001;&#x5DF2;&#x63A5;&#x53D7;&#x5DF2;&#x53D1;ACK&#x6CA1;&#x6709;&#x53D1;&#x7ED9;&#x5185;&#x6838;&#x7684;&#x7247;&#x6BB5;</li>
+</ol>
+</li>
+<li>&#x6ED1;&#x52A8;&#x7A97;&#x53E3;&#x7684;&#x6D41;&#x91CF;&#x63A7;&#x5236;&#xFF1A;<ol>
+<li>&#x63A5;&#x6536;&#x65B9;&#x63A5;&#x6536;&#x5230;&#x7684;&#x6587;&#x672C;&#x6D41;&#x5FC5;&#x987B;&#x7B49;&#x5F85;&#x8FDB;&#x7A0B;&#x6765;&#x8BFB;&#x53D6;&#xFF0C;&#x6240;&#x4EE5;&#x6709;&#x63A5;&#x6536;&#x7F13;&#x5B58;&#x3002;</li>
+<li>&#x5982;&#x679C;&#x63A5;&#x6536;&#x7F13;&#x5B58;&#x5269;&#x4F59;&#x7A7A;&#x95F4;&#x53D8;&#x5C11;&#xFF0C;&#x5C31;&#x9700;&#x8981;&#x53D1;&#x9001;advertised window&#x901A;&#x77E5;&#x53D1;&#x9001;&#x65B9;&#x51CF;&#x5C0F;&#x7A97;&#x53E3;</li>
+</ol>
+</li>
+<li>&#x96F6;&#x7A97;&#x53E3;&#xFF1A;<ol>
+<li>&#x53D1;&#x9001;&#x65B9;&#x6536;&#x5230;&#x5927;&#x5C0F;&#x4E3A;0&#x7684;advertised window&#x901A;&#x77E5;&#x65F6;&#xFF0C;&#x505C;&#x6B62;&#x53D1;&#x9001;&#x3002;</li>
+<li>&#x63A5;&#x6536;&#x65B9;advertised window size &#x5927;&#x4E8E; 0 &#x65F6;&#xFF0C;&#x4F1A;&#x518D;&#x6B21;&#x53D1;&#x9001;ACK&#x901A;&#x77E5;&#x53D1;&#x9001;&#x65B9;&#xFF0C;&#x4F46;&#x662F;ACK&#x5E76;&#x4E0D;&#x53EF;&#x9760;&#xFF0C;&#x53EF;&#x80FD;&#x4E22;&#x5931;</li>
+<li>&#x53D1;&#x9001;&#x65B9;&#x4F1A;&#x5728;&#x96F6;&#x7A97;&#x53E3;&#x540E;&#xFF0C;&#x4E0D;&#x65AD;&#x63A2;&#x6D4B;&#x63A5;&#x6536;&#x65B9;&#x7684;&#x7A97;&#x53E3;&#x3002;&#x53D1;&#x9001;&#x7A97;&#x53E3;&#x63A2;&#x6D4B;(window probe)&#xFF0C;&#x63A5;&#x6536;&#x65B9;ACK&#x54CD;&#x5E94;&#xFF0C;&#x8FD9;&#x4E2A;&#x6D41;&#x7A0B;&#x662F;&#x53EF;&#x9760;&#x7684;&#x3002;</li>
+</ol>
+</li>
+<li>&#x767D;&#x75F4;&#x7A97;&#x53E3;&#x7EFC;&#x5408;&#x75C7; (Silly Window Syndrome)&#xFF1A;<ol>
+<li>&#x73B0;&#x8C61;&#xFF1A;&#x63A5;&#x6536;&#x65B9;&#x7684;advertised window&#x592A;&#x5C0F;&#xFF0C;&#x53D1;&#x9001;&#x65B9;&#x4F9D;&#x6B21;&#x53D1;&#x9001;&#x7684;&#x7247;&#x6BB5;&#x4E5F;&#x5C0F;&#xFF0C;&#x5BF9;&#x4E8E;&#x6574;&#x4E2A;&#x7F51;&#x7EDC;&#x6765;&#x8BF4;&#x662F;&#x6D41;&#x91CF;&#x7684;&#x6D6A;&#x8D39;</li>
+<li>&#x89E3;&#x51B3;&#xFF1A;&#x63A5;&#x6536;&#x65B9;&#x7684;advertised window&#x9700;&#x8981;&#x5927;&#x4E8E;xx&#x503C;&#xFF0C;&#x53D1;&#x9001;&#x53D1;&#x53D1;&#x9001;&#x7247;&#x6BB5;&#x9700;&#x8981;&#x5927;&#x4E8E;xx&#x503C;</li>
+</ol>
+</li>
+<li>&#x5BFC;&#x81F4;IP&#x5305;&#x4E22;&#x5931;&#x7684;&#x539F;&#x56E0;&#x53EF;&#x80FD;&#x6709;&#x5F88;&#x591A;&#xFF1A;<ul>
+<li>&#x6BD4;&#x5982;IP&#x5305;&#x7ECF;&#x8FC7;&#x592A;&#x591A;&#x7684;&#x8DEF;&#x7531;&#x5668;&#x63A5;&#x529B;&#xFF0C;&#x8FBE;&#x5230;hop limit&#xFF1B;</li>
+<li>&#x6BD4;&#x5982;&#x8DEF;&#x7531;&#x5668;&#x592A;&#x8FC7;&#x62E5;&#x6324;&#xFF0C;&#x5BFC;&#x81F4;&#x4E00;&#x4E9B;IP&#x5305;&#x88AB;&#x4E22;&#x5F03;&#xFF1B;</li>
+<li>&#x518D;&#x6BD4;&#x5982;&#x8DEF;&#x7531;&#x8868;(routing table)&#x6CA1;&#x6709;&#x53CA;&#x65F6;&#x66F4;&#x65B0;&#xFF0C;&#x5BFC;&#x81F4;IP&#x5305;&#x65E0;&#x6CD5;&#x9001;&#x8FBE;&#x76EE;&#x7684;&#x5730;&#x3002;  </li>
+</ul>
+</li>
+<li>&#x8D85;&#x65F6;&#x91CD;&#x65B0;&#x53D1;&#x9001;<ul>
+<li>&#x91CD;&#x65B0;&#x53D1;&#x9001;&#x8D85;&#x65F6;&#x65F6;&#x95F4;(RTO, retransmission timeout)&#xFF1A;&#x5F53;&#x53D1;&#x9001;&#x65B9;&#x9001;&#x51FA;&#x4E00;&#x4E2A;TCP&#x7247;&#x6BB5;&#x540E;&#xFF0C;&#x5C06;&#x5F00;&#x59CB;&#x8BA1;&#x65F6;&#xFF0C;&#x7B49;&#x5F85;&#x8BE5;TCP&#x7247;&#x6BB5;&#x7684;ACK&#x56DE;&#x590D;&#x7684;&#x65F6;&#x95F4;</li>
+<li>&#x5F80;&#x8FD4;&#x65F6;&#x95F4;(RTT, round trip time)&#xFF1A;&#x53D1;&#x9001;&#x65B9;&#x53D1;&#x9001;&#x7247;&#x6BB5;&#x5230;&#x6536;&#x5230;ASK&#x54CD;&#x5E94;&#x7684;&#x65F6;&#x95F4;</li>
+<li>RTO&#x5FC5;&#x987B;&#x7B26;&#x5408;&#x5F53;&#x524D;&#x7F51;&#x7EDC;&#x7684;&#x4F7F;&#x7528;&#x72B6;&#x51B5;&#x3002;&#x7F51;&#x7EDC;&#x72B6;&#x51B5;&#x8D8A;&#x597D;&#xFF0C;RTO&#x5E94;&#x8BE5;&#x8D8A;&#x77ED;&#xFF1B;&#x7F51;&#x7EDC;&#x72B6;&#x51B5;&#x8D8A;&#x5DEE;&#xFF0C;RTO&#x5E94;&#x8BE5;&#x8D8A;&#x957F;&#x3002;</li>
+<li>RTO&#x7684;&#x4E00;&#x4E2A;&#x7B97;&#x6CD5;&#xFF1A;RTO = RTT&#x7684;&#x5E73;&#x5747;&#x503C; + 4&#x6B21;&#x6D4B;&#x91CF;&#x7684;&#x6807;&#x51C6;&#x5DEE;</li>
+</ul>
+</li>
+<li>&#x5FEB;&#x901F;&#x91CD;&#x65B0;&#x53D1;&#x9001;&#xFF1A;&#x5F53;&#x63A5;&#x6536;&#x65B9;&#x6536;&#x5230;&#x4E71;&#x5E8F;&#x7247;&#x6BB5;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5982;&#x679C;&#x7F3A;&#x5E8F;&#x53F7;8&#x7684;&#x7247;&#x6BB5;&#xFF0C;&#x5219;&#x53D1;ACK=8&#xFF0C;&#x8FDE;&#x7EED;3&#x6B21;&#x540E;&#xFF0C;&#x53D1;&#x9001;&#x65B9;&#x4E3B;&#x52A8;&#x53D1;&#x9001;&#x5E8F;&#x53F7;8&#x7684;&#x7247;&#x6BB5;</li>
+<li>&#x771F;&#x5B9E;&#x6ED1;&#x7A97;&#x5927;&#x5C0F;&#x53D6;&#x4E24;&#x4E2A;&#x6ED1;&#x7A97;&#x9650;&#x5236;&#x7684;&#x6700;&#x5C0F;&#x503C;&#xFF1A;<ul>
+<li>advertised window size&#xFF0C;&#x4EE5;&#x5B9E;&#x73B0;TCP&#x6D41;&#x91CF;&#x63A7;&#x5236;</li>
+<li>congestion window size&#xFF0C;&#x4EE5;&#x5B9E;&#x73B0;TCP&#x62E5;&#x585E;&#x63A7;&#x5236;</li>
+</ul>
+</li>
+<li>congestion window&#x603B;&#x662F;&#x5904;&#x4E8E;&#x4E24;&#x79CD;&#x72B6;&#x6001;&#x7684;&#x4E00;&#x4E2A;&#xFF08;&#x5148;&#x4ECE;slow start&#x7684;&#x72B6;&#x6001;&#x5F00;&#x59CB;&#xFF09;: <ul>
+<li>&#x6162;&#x8D77;&#x52A8;(slow start)</li>
+<li>&#x5835;&#x585E;&#x907F;&#x514D;(congestion avoidance)  </li>
+</ul>
+</li>
+<li>&#x62E5;&#x585E;&#x63A7;&#x5236;&#x7684;&#x4E24;&#x4E2A;&#x53D8;&#x91CF;&#xFF1A;<ul>
+<li>cwnd&#x4EE3;&#x8868;congestion window size</li>
+<li>sshthresh&#x662F;slow start&#x5230;congestion avoidance&#x7684;&#x5207;&#x6362;&#x70B9;</li>
+</ul>
+</li>
+<li>&#x62E5;&#x585E;&#x63A7;&#x5236;&#x7684;&#x5176;&#x4E2D;&#x4E00;&#x79CD;&#x7B97;&#x6CD5;&#xFF1A;<ul>
+<li>&#x6BCF;&#x6B21;&#x8FDB;&#x5165;&#x5230;slow start&#x72B6;&#x6001;&#x65F6;&#xFF0C;cwnd&#x90FD;&#x9700;&#x8981;&#x91CD;&#x7F6E;&#x4E3A;&#x521D;&#x59CB;&#x503C;1&#x3002;&#x53D1;&#x9001;&#x65B9;&#x6BCF;&#x63A5;&#x6536;&#x5230;&#x4E00;&#x4E2A;&#x6B63;&#x786E;&#x7684;ACK&#xFF0C;cwnd&#x5F00;&#x59CB;&#x500D;&#x589E;</li>
+<li>&#x5F53;cwnd&#x5927;&#x4E8E;sshthresh&#x65F6;&#xFF0C;&#x8FDB;&#x5165;congestion avoidance&#x72B6;&#x6001;</li>
+<li>congestion avoidance&#x72B6;&#x6001;&#x65F6;&#xFF0C;&#x6BCF;&#x4E2A;RTT&#x540E;cwnd&#x7EBF;&#x6027;&#x9012;&#x589E;(cwnd++)</li>
+<li>congestion avoidance&#x72B6;&#x6001;&#x65F6;&#xFF0C;&#x5982;&#x679C;&#x6709;&#x7247;&#x6BB5;&#x4E22;&#x5931;&#xFF0C;&#x91CD;&#x65B0;&#x56DE;&#x5230;slow start&#x72B6;&#x6001;&#xFF0C;&#x5E76;&#x5C06;ssthresh&#x66F4;&#x65B0;&#x4E3A;cwnd&#x7684;&#x4E00;&#x534A;&#x3002;</li>
+</ul>
+</li>
+</ol>
+<h4 id="&#x534F;&#x8BAE;&#x68EE;&#x6797;-&#x5E94;&#x7528;&#x5C42;">&#x534F;&#x8BAE;&#x68EE;&#x6797;-&#x5E94;&#x7528;&#x5C42;</h4>
+<ol>
+<li>&#x6B63;&#x5411;DNS&#x67E5;&#x8BE2;&#xFF1A;&#x5DF2;&#x7ECF;&#x77E5;&#x9053;&#x57DF;&#x540D;&#xFF0C;&#x60F3;&#x8981;&#x67E5;&#x8BE2;&#x5BF9;&#x5E94;IP</li>
+<li>&#x53CD;&#x5411;DNS&#x67E5;&#x8BE2;&#xFF1A;&#x5DF2;&#x7ECF;&#x77E5;&#x9053;IP&#xFF0C;&#x60F3;&#x8981;&#x67E5;&#x8BE2;&#x5BF9;&#x5E94;&#x57DF;&#x540D;</li>
+<li>DHCP&#x534F;&#x8BAE;&#x5168;&#x79F0;&#x4E3A;&#x201C;&#x52A8;&#x6001;&#x4E3B;&#x673A;&#x8BBE;&#x7F6E;&#x534F;&#x8BAE;&#x201D;&#xFF08;Dynamic Host Configuration Protocol&#xFF09;<ul>
+<li>&#x666E;&#x901A;&#x7535;&#x8111;&#x4E2D;&#x90FD;&#x5185;&#x7F6E;&#x6709;DHCP&#x5BA2;&#x6237;&#x7AEF;&#xFF0C;DHCP&#x5BA2;&#x6237;&#x7AEF;&#x4F1A;&#x5728;&#x8BE5;&#x7F51;&#x7EDC;&#x4E0A;&#x627E;DHCP&#x670D;&#x52A1;&#x5668;</li>
+<li>DHCP&#x670D;&#x52A1;&#x5668;&#x5C06;&#x7ED9;&#x7535;&#x8111;&#x63D0;&#x4F9B;&#x5408;&#x7406;&#x7684;&#x7F51;&#x7EDC;&#x914D;&#x7F6E;(IP&#x5730;&#x5740;&#x7B49;&#x7F51;&#x7EDC;&#x53C2;&#x6570;)&#xFF0C;&#x5E76;&#x628A;&#x8BBE;&#x7F6E;&#x4FE1;&#x606F;&#x4F20;&#x56DE;&#x672C;&#x673A;</li>
+<li>&#x666E;&#x901A;&#x4F7F;&#x7528;&#x7F51;&#x7EDC;&#x7684;&#x65F6;&#x95F4;&#x53EF;&#x80FD;&#x8D85;&#x8FC7;&#x79DF;&#x671F;&#xFF0C;&#x9700;&#x8981;&#x5728;&#x4E2D;&#x9014;&#x7533;&#x8BF7;&#x5EF6;&#x957F;&#x79DF;&#x671F;&#x3002;&#x5728;&#x79DF;&#x671F;&#x5230;&#x65F6;&#x90FD;&#x6CA1;&#x6709;&#x8054;&#x7CFB;DHCP&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x90A3;&#x4E48;DHCP&#x670D;&#x52A1;&#x5668;&#x4F1A;&#x6536;&#x56DE;IP&#x5730;&#x5740;</li>
+<li>DHCP&#x534F;&#x8BAE;&#x7684;&#x5E95;&#x5C42;&#x662F;UDP&#x534F;&#x8BAE;&#xFF0C;UDP&#x652F;&#x6301;&#x5E7F;&#x64AD;</li>
+</ul>
+</li>
+<li>DHCP&#x901A;&#x4FE1;&#x5206;&#x4E3A;&#x56DB;&#x6B65;&#xFF08;&#x6BCF;&#x4E00;&#x6B65;&#x7684;&#x901A;&#x4FE1;&#x5185;&#x5BB9;&#x90FD;&#x653E;&#x5728;&#x4E00;&#x4E2A;&#x7B26;&#x5408;DHCP&#x683C;&#x5F0F;&#x7684;&#x6570;&#x636E;&#x5305;&#x4E2D;&#xFF09;&#xFF1A;<ul>
+<li>Discovery&#xFF1A;&#x5BA2;&#x6237;&#x673A;&#x53D1;&#x5E7F;&#x64AD;&#xFF0C;&#x641C;&#x5BFB;DHCP&#x670D;&#x52A1;&#x5668;&#x3002;</li>
+<li>Offer&#xFF1A;DHCP&#x670D;&#x52A1;&#x5668;&#x53D1;&#x51FA;&#x9080;&#x8BF7;&#xFF0C;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x53EF;&#x7528;&#x7684;IP&#x5730;&#x5740;&#x3002;</li>
+<li>Request&#xFF1A;&#x5BA2;&#x6237;&#x673A;&#x6B63;&#x5F0F;&#x8BF7;&#x6C42;&#x4F7F;&#x7528;&#x8BE5;IP&#x5730;&#x5740;&#x3002;</li>
+<li>Acknowledge&#xFF1A;DHCP&#x670D;&#x52A1;&#x5668;&#x786E;&#x8BA4;&#xFF0C;&#x5E76;&#x63D0;&#x4F9B;&#x5176;&#x4ED6;&#x914D;&#x7F6E;&#x53C2;&#x6570;&#x3002;</li>
+</ul>
+</li>
+<li>DHCP&#x653B;&#x51FB;&#xFF08;&#x524D;&#x63D0;&#x662F;&#x653B;&#x51FB;&#x8005;&#x8FDE;&#x5165;&#x5C40;&#x57DF;&#x7F51;&#xFF09;&#xFF1A;<ul>
+<li>&#x624B;&#x6BB5;&#xFF1A;&#x653B;&#x51FB;&#x8005;&#x4E0D;&#x65AD;&#x53D1;&#x51FA;DHCP&#x8BF7;&#x6C42;&#xFF0C;&#x4E8E;&#x662F;DHCP&#x670D;&#x52A1;&#x5668;&#x7684;&#x5730;&#x5740;&#x6C60;&#x88AB;&#x8017;&#x5E72;&#xFF1B;&#x88C5;&#x626E;&#x6210;&#x65B0;&#x7684;DHCP&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x628A;&#x81EA;&#x5DF1;&#x9A97;&#x6765;&#x7684;IP&#x5730;&#x5740;&#x5206;&#x914D;&#x7ED9;&#x7F51;&#x7EDC;&#x4E0A;&#x7684;&#x65B0;&#x7528;&#x6237;</li>
+<li>&#x76EE;&#x7684;&#xFF1A;DHCP&#x670D;&#x52A1;&#x5668;&#x8FD8;&#x80FD;&#x63D0;&#x4F9B;&#x5176;&#x4ED6;&#x7F51;&#x7EDC;&#x8BBE;&#x7F6E;&#x53C2;&#x6570;&#xFF0C;&#x8BA9;&#x81EA;&#x5DF1;&#x6210;&#x4E3A;DNS&#x670D;&#x52A1;&#x5668;&#x6216;&#x8005;&#x7F51;&#x7EDC;&#x51FA;&#x53E3;&#xFF0C;&#x5B9E;&#x73B0;&#x6570;&#x636E;&#x76D1;&#x542C;</li>
+</ul>
+</li>
+<li>TLS&#x540D;&#x4E3A;&#x4F20;&#x8F93;&#x5C42;&#x5B89;&#x5168;&#x534F;&#x8BAE;(Transport Layer Security Protocol)</li>
+<li>SSL&#x534F;&#x8BAE;(&#x5B89;&#x5168;&#x5957;&#x63A5;&#x5C42;&#x534F;&#x8BAE;&#xFF0C;Secure Sockets Layer)&#xFF0C;&#x7528;&#x4E8E;&#x5EFA;&#x7ACB;https&#x8FC7;&#x7A0B;&#x4E2D;&#x4EA4;&#x6362;&#x4E00;&#x4E2A;&#x5BF9;&#x79F0;&#x52A0;&#x5BC6;&#x5BC6;&#x94A5;<ul>
+<li>&#x5BA2;&#x6237;&#x53D1;&#x8D77;&#x8BF7;&#x6C42;&#x65F6;&#xFF0C;&#x9664;&#x4E86;&#x8BF4;&#x660E;&#x81EA;&#x5DF1;&#x652F;&#x6301;&#x7684;&#x975E;&#x5BF9;&#x79F0;&#x52A0;&#x5BC6;&#x7B97;&#x6CD5;&#xFF0C;&#x8FD8;&#x4F1A;&#x9644;&#x52A0;&#x4E00;&#x4E2A;&#x5BA2;&#x6237;&#x7AEF;&#x968F;&#x673A;&#x6570;(client random)&#x3002;</li>
+<li>&#x670D;&#x52A1;&#x5668;&#x56DE;&#x590D;&#x8BF7;&#x6C42;&#x65F6;&#xFF0C;&#x4F1A;&#x786E;&#x5B9A;&#x975E;&#x5BF9;&#x79F0;&#x52A0;&#x5BC6;&#x7B97;&#x6CD5;&#x548C;&#x54C8;&#x5E0C;&#x51FD;&#x6570;&#xFF0C;&#x5E76;&#x9644;&#x4E0A;&#x516C;&#x94A5;&#x3002;&#x6B64;&#x5916;&#xFF0C;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x8FD8;&#x4F1A;&#x5728;&#x6B64;&#x6B21;&#x901A;&#x4FE1;&#x4E2D;&#x9644;&#x52A0;&#x4E00;&#x4E2A;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x968F;&#x673A;&#x6570;(server random)&#x3002;</li>
+<li>&#x5BA2;&#x6237;&#x7AEF;&#x4F1A;&#x4EA7;&#x751F;&#x7B2C;&#x4E09;&#x4E2A;&#x968F;&#x673A;&#x6570;(Premaster secret)&#xFF0C;&#x7136;&#x540E;&#x5229;&#x7528;&#x670D;&#x52A1;&#x5668;&#x786E;&#x5B9A;&#x7684;&#x975E;&#x5BF9;&#x79F0;&#x52A0;&#x5BC6;&#x7B97;&#x6CD5;&#x548C;&#x516C;&#x94A5;&#x6765;&#x52A0;&#x5BC6;&#x8FD9;&#x4E2A;&#x968F;&#x673A;&#x6570;&#xFF0C;&#x518D;&#x53D1;&#x9001;&#x7ED9;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x3002;</li>
+<li>&#x670D;&#x52A1;&#x5668;&#x7528;&#x81EA;&#x5DF1;&#x7684;&#x79C1;&#x94A5;&#x89E3;&#x5BC6;&#x7B2C;&#x4E09;&#x4E2A;&#x968F;&#x673A;&#x6570;&#x3002;</li>
+<li>&#x8FD9;&#x6837;&#xFF0C;&#x5BA2;&#x6237;&#x7AEF;&#x548C;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x90FD;&#x77E5;&#x9053;&#x4E86;&#x4E09;&#x4E2A;&#x968F;&#x673A;&#x6570;&#x3002;&#x53CC;&#x65B9;&#x5404;&#x81EA;&#x7528;&#x5546;&#x91CF;&#x597D;&#x7684;&#x54C8;&#x5E0C;&#x51FD;&#x6570;&#x4ECE;&#x4E09;&#x4E2A;&#x968F;&#x673A;&#x6570;&#x83B7;&#x5F97;&#x5BF9;&#x79F0;&#x52A0;&#x5BC6;&#x7684;&#x5BC6;&#x94A5;&#x3002;</li>
+</ul>
+</li>
+</ol>
+<h4 id="&#x534F;&#x8BAE;&#x68EE;&#x6797;-cidr&#x4E0E;nat">&#x534F;&#x8BAE;&#x68EE;&#x6797;-(CIDR&#x4E0E;NAT)</h4>
+<ol>
+<li>IP&#x5730;&#x5740;&#x53EF;&#x4EE5;&#x5206;&#x4E3A;&#x5982;&#x4E0B;&#x51E0;&#x7C7B;&#xFF1A;<ul>
+<li>A&#x7C7B;&#xFF1A;1.0.0.0~126.255.255.255&#xFF0C;ip&#x6709;2^24&#x4E2A;&#xFF0C;&#x5B50;&#x7F51;&#x63A9;&#x7801;255.0.0.0</li>
+<li>B&#x7C7B;&#xFF1A;128.0.0.0~191.255.255.255&#xFF0C;ip&#x6709;2^16&#x4E2A;&#xFF0C;&#x5B50;&#x7F51;&#x63A9;&#x7801;255.255.0.0</li>
+<li>C&#x7C7B;&#xFF1A;192.0.0.0~223.255.255.255&#xFF0C;ip&#x6709;2^8&#x4E2A;&#xFF0C;&#x5B50;&#x7F51;&#x63A9;&#x7801;255.255.255.0</li>
+<li>IP&#x5305;&#x901A;&#x8FC7;&#x8DEF;&#x7531;&#x8868;&#x786E;&#x5B9A;&#x4E0B;&#x4E00;&#x8DF3;&#x5730;&#x5740;&#x65F6;&#xFF0C;&#x901A;&#x8FC7;&#x4E0B;&#x4E00;&#x8DF3;&#x7684;ip&#x5730;&#x5740;&#x786E;&#x5B9A;&#x5B83;&#x5C5E;&#x4E8E;A&#x3001;B&#x3001;C&#x7C7B;&#xFF0C;&#x4ECE;&#x800C;&#x786E;&#x5B9A;&#x4E86;&#x5B83;&#x7684;&#x5B50;&#x7F51;&#x63A9;&#x7801;</li>
+</ul>
+</li>
+<li>CIDR(Classless Inter Domain Routing)&#x8DEF;&#x7531;&#x8868;&#xFF1A;<ul>
+<li>&#x589E;&#x52A0;&#x4E86;&#x5B50;&#x7F51;&#x63A9;&#x7801;(subnet masking)&#xFF0C;&#x4ECE;&#x800C;&#x53EF;&#x4EE5;&#x66F4;&#x7EC6;&#x5206;&#x7F51;&#x7EDC;&#xFF0C;&#x800C;&#x4E0D;&#x4EC5;&#x4EC5;&#x662F;A&#x3001;B&#x3001;C&#x7C7B;</li>
+</ul>
+</li>
+<li>CIDR&#x867D;&#x7136;&#x53EF;&#x4EE5;&#x66F4;&#x52A0;&#x8282;&#x7EA6;IP&#x5730;&#x5740;&#xFF0C;&#x4F46;&#x5B83;&#x5E76;&#x4E0D;&#x80FD;&#x521B;&#x9020;&#x65B0;&#x7684;IP&#x5730;&#x5740;&#x3002;&#x56E0;&#x6B64;&#x51FA;&#x73B0;&#x4E86;NAT(Network Address Translation)&#x79C1;&#x6709;&#x7F51;&#x7EDC;</li>
+<li>NAT&#x89C4;&#x5B9A;&#x4E0B;&#x9762;&#x4E09;&#x6BB5;IP&#x5730;&#x5740;&#x88AB;&#x4FDD;&#x7559;&#x7528;&#x4F5C;&#x79C1;&#x6709;IP&#x5730;&#x5740;&#xFF1A;<ul>
+<li>10.0.0.0~10.255.255.255</li>
+<li>172.16.0.0~172.31.255.255</li>
+<li>192.168.0.0~192.168.255.255</li>
+</ul>
+</li>
+<li>NAT&#x662F;&#x4E3A;&#x79C1;&#x6709;&#x7F51;&#x7EDC;(private network)&#x670D;&#x52A1;&#x7684;&#xFF1A;<ul>
+<li>&#x5F53;&#x79C1;&#x6709;&#x7F51;&#x7EDC;&#x5185;&#x90E8;&#x4E3B;&#x673A;&#x548C;&#x5916;&#x90E8;Internet&#x901A;&#x4FE1;&#x65F6;&#xFF0C;&#x7F51;&#x5173;(gateway)&#x8DEF;&#x7531;&#x5668;&#x8D1F;&#x8D23;&#x5C06;&#x79C1;&#x6709;IP&#x5730;&#x5740;&#x8F6C;&#x6362;&#x4E3A;&#x5168;&#x7403;IP&#x5730;&#x5740;&#xFF0C;&#x8FD9;&#x4E2A;&#x5730;&#x5740;&#x8F6C;&#x6362;&#x8FC7;&#x7A0B;&#x5C31;&#x662F;Network Address Translation</li>
+</ul>
+</li>
+<li>&#x57FA;&#x7840;NAT&#xFF0C;&#x4E5F;&#x79F0;&#x4E3A;&#x4E00;&#x5BF9;&#x4E00;(one-to-one)NAT&#xFF0C;&#x5185;&#x90E8;IP&#x548C;&#x5185;&#x90E8;IP&#x9700;&#x8981;&#x4E00;&#x4E00;&#x5BF9;&#x5E94;</li>
+<li>NAPT (Network Address and Port Translation)<ul>
+<li>&#x5229;&#x7528;NAPT&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;(&#x6216;&#x8005;&#x5C11;&#x91CF;&#x7684;)&#x5916;&#x90E8;IP&#x548C;&#x5927;&#x91CF;&#x7684;&#x7AEF;&#x53E3;&#x53F7;&#xFF0C;&#x6765;&#x5BF9;&#x5E94;&#x591A;&#x4E2A;&#x5185;&#x90E8;IP&#x4EE5;&#x53CA;&#x76F8;&#x5E94;&#x7684;&#x7AEF;&#x53E3;&#x53F7;&#xFF0C;&#x4ECE;&#x800C;&#x5927;&#x5927;&#x51CF;&#x5C0F;&#x4E86;&#x5BF9;&#x5168;&#x7403;IP&#x5730;&#x5740;&#x7684;&#x9700;&#x6C42;</li>
+</ul>
+</li>
+</ol>
+<h4 id="&#x534F;&#x8BAE;&#x68EE;&#x6797;-&#x7F51;&#x7EDC;&#x8BCA;&#x65AD;&#x547D;&#x4EE4;">&#x534F;&#x8BAE;&#x68EE;&#x6797;-&#x7F51;&#x7EDC;&#x8BCA;&#x65AD;&#x547D;&#x4EE4;</h4>
+<ol>
+<li>ARP<ul>
+<li>arp -a //&#x663E;&#x793A;&#x672C;&#x5730;&#x5B58;&#x50A8;&#x7684;IP-MAC&#x5BF9;&#x5E94;&#x5173;&#x7CFB;</li>
+<li>arping -I eth0 192.168.1.1 //&#x7ECF;eth0&#x63A5;&#x53E3;&#xFF0C;&#x53D1;&#x9001;ARP&#x8BF7;&#x6C42;&#xFF0C;&#x67E5;&#x8BE2;IP&#x4E3A;192.168.1.1&#x8BBE;&#x5907;&#x7684;MAC&#x5730;&#x5740;</li>
+<li>arp-scan -l //&#x67E5;&#x8BE2;&#x6574;&#x4E2A;&#x5C40;&#x57DF;&#x7F51;&#x5185;&#x7684;&#x6240;&#x6709;IP&#x5730;&#x5740;&#x7684;&#x5BF9;&#x5E94;MAC&#x5730;&#x5740;</li>
+<li>tcpdump -i en0 arp //&#x76D1;&#x542C;en0&#x7F51;&#x5361;&#x7684;arp&#x534F;&#x8BAE;&#x901A;&#x4FE1;</li>
+</ul>
+</li>
+<li>&#x7F51;&#x7EDC;&#x5C42;<ul>
+<li>sudo ipconfig set en0 DHCP //&#x66F4;&#x65B0;DHCP&#x79DF;&#x7EA6;&#x3002;&#x8BBE;&#x5907;&#x5C06;&#x91CA;&#x653E;IP&#x5730;&#x5740;&#xFF0C;&#x518D;&#x4ECE;DHCP&#x670D;&#x52A1;&#x5668;&#x91CD;&#x65B0;&#x83B7;&#x5F97;IP&#x5730;&#x5740;&#x3002;</li>
+<li>sudo ipconfig set en0 INFORM 192.168.0.120 //&#x5C06;&#x63A5;&#x53E3;en0&#x8BBE;&#x5B9A;&#x4E3A;&#x9759;&#x6001;IP&#x5730;&#x5740;&#x3002;</li>
+</ul>
+</li>
+<li>&#x8DEF;&#x7531;<ul>
+<li>netstat -nr //&#x7EBF;&#x4E0A;&#x8DEF;&#x7531;&#x8868;</li>
+<li>traceroute 74.125.128.99 //&#x8FFD;&#x8E2A;&#x5230;&#x8FBE;IP&#x76EE;&#x7684;&#x5730;&#x7684;&#x5168;&#x7A0B;&#x8DEF;&#x7531;&#x3002;</li>
+<li>traceroute -I 74.125.128.99 //&#x901A;&#x8FC7;ICMP&#x534F;&#x8BAE;&#xFF0C;&#x8FFD;&#x8E2A;&#x8DEF;&#x7531;</li>
+<li>traceroute -T -p 80 74.125.128.99 //&#x901A;&#x8FC7;TCP&#x534F;&#x8BAE;&#xFF0C;&#x7ECF;80&#x7AEF;&#x53E3;&#xFF0C;&#x8FFD;&#x8E2A;&#x8DEF;&#x7531;&#xFF08;ICMP&#x534F;&#x8BAE;&#x7ECF;&#x5E38;&#x4F1A;&#x88AB;&#x7981;&#x7528;&#xFF0C;&#x800C;TCP&#x5F88;&#x5C11;&#x7981;&#x7528;&#xFF09;</li>
+</ul>
+</li>
+<li>&#x7F51;&#x7EDC;&#x76D1;&#x542C;<ul>
+<li>sudo tcpdump -i en0 //&#x76D1;&#x542C;en0&#x63A5;&#x53E3;&#x7684;&#x6240;&#x6709;&#x901A;&#x4FE1;</li>
+<li>sudo tcpdump -A -i en0 //&#x7528;ASCII&#x663E;&#x793A;en0&#x63A5;&#x53E3;&#x7684;&#x901A;&#x4FE1;&#x5185;&#x5BB9;</li>
+<li>sudo tcpdump -i en0 &apos;port 8080&apos; //&#x663E;&#x793A;en0&#x63A5;&#x53E3;&#x7684;8080&#x7AEF;&#x53E3;&#x7684;&#x901A;&#x4FE1;</li>
+<li>sudo tcpdump -i eth1 src 192.168.1.200 //&#x663E;&#x793A;eth1&#x63A5;&#x53E3;&#xFF0C;&#x6765;&#x81EA;192.168.1.200&#x7684;&#x901A;&#x4FE1;</li>
+<li>sudo tcpdump -i eth1 dst 192.168.1.101 and port 80 //&#x663E;&#x793A;eth1&#x63A5;&#x53E3;80&#x7AEF;&#x53E3;&#xFF0C;&#x76EE;&#x7684;&#x5730;&#x4E3A;192.168.1.101&#x7684;&#x901A;&#x4FE1;</li>
+<li>sudo tcpdump -w record.pcap -i lo0 //&#x5C06;lo0&#x63A5;&#x53E3;&#x7684;&#x901A;&#x4FE1;&#x5B58;&#x5165;&#x6587;&#x4EF6;record.pcap</li>
+</ul>
+</li>
+<li>&#x57DF;&#x540D;&#x89E3;&#x6790;&#xFF1A;host www.sina.com.cn</li>
+</ol>
 
                                 
                                 </section>
@@ -407,7 +569,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"8.网络编程","level":"1.9","depth":1,"previous":{"title":"7.虚拟内存与动态内存分配","level":"1.8","depth":1,"path":"docs/7.md","ref":"docs/7.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"docs/8.md","mtime":"2020-12-23T03:59:53.664Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-23T04:00:20.169Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"8.网络编程","level":"1.9","depth":1,"previous":{"title":"7.虚拟内存与动态内存分配","level":"1.8","depth":1,"path":"docs/7.md","ref":"docs/7.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"docs/8.md","mtime":"2020-12-24T09:07:31.066Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-24T09:07:59.333Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
