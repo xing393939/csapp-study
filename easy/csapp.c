@@ -700,7 +700,7 @@ int open_listenfd(int port)
     /* Eliminates "Address already in use" error from bind */
     if (setsockopt(listenfd, SOL_SOCKET, SO_REUSEADDR, 
 		   (const void *)&optval , sizeof(int)) < 0)
-	return -1;
+	return -2;
 
     /* Listenfd will be an endpoint for all requests to port
        on any IP address for this host */
@@ -709,11 +709,11 @@ int open_listenfd(int port)
     serveraddr.sin_addr.s_addr = htonl(INADDR_ANY); 
     serveraddr.sin_port = htons((unsigned short)port); 
     if (bind(listenfd, (SA *)&serveraddr, sizeof(serveraddr)) < 0)
-	return -1;
+	return -3;
 
     /* Make it a listening socket ready to accept connection requests */
     if (listen(listenfd, LISTENQ) < 0)
-	return -1;
+	return -4;
     return listenfd;
 }
 /* $end open_listenfd */
@@ -738,8 +738,11 @@ int Open_listenfd(int port)
 {
     int rc;
 
-    if ((rc = open_listenfd(port)) < 0)
-	unix_error("Open_listenfd error");
+    if ((rc = open_listenfd(port)) < 0) {
+        char msg[24];
+        sprintf(msg, "Open_listenfd error %d", rc);
+        unix_error(msg);
+    }
     return rc;
 }
 /* $end csapp.c */

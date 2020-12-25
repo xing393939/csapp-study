@@ -5,17 +5,11 @@ int main(int argc, char **argv) {
     char *host, *port, buf[MAXLINE];
     rio_t rio;
 
-    host = argv[1];
-    port = argv[2];
-    if (strlen(host) == 0) {
-        host = "localhost";
-    }
-    if (strlen(port) == 0) {
-        port = "201";
-    }
+    host = "127.0.0.1";
+    port = "12102";
 
     // 建立连接（前面已经详细介绍）
-    clientfd = Open_clientfd(host, (int) *port);
+    clientfd = Open_clientfd(host, atoi(port));
     Rio_readinitb(&rio, clientfd);
 
     while (Fgets(buf, MAXLINE, stdin) != NULL) {
