@@ -286,6 +286,7 @@
 <li>&#x5C5E;&#x4E8E;&#x57FA;&#x4E8E;&#x8FDB;&#x7A0B;&#x548C;&#x57FA;&#x4E8E;&#x4E8B;&#x4EF6;&#x7684;&#x6DF7;&#x5408;&#x4F53;</li>
 </ul>
 </li>
+<li>&#x8D85;&#x7EBF;&#x7A0B;&#x7684;&#x8BBE;&#x8BA1;&#x4E2D;&#xFF0C;&#x4E00;&#x4E2A;CPU&#x6838;&#x5FC3;&#x53EF;&#x4EE5;&#x5904;&#x7406;&#x82E5;&#x5E72;&#x4E2A;&#x7EBF;&#x7A0B;</li>
 </ol>
 <h4 id="&#x4EE5;web&#x670D;&#x52A1;&#x5668;&#x4E3A;&#x4F8B;">&#x4EE5;Web&#x670D;&#x52A1;&#x5668;&#x4E3A;&#x4F8B;</h4>
 <ol>
@@ -305,6 +306,7 @@
 <li>&#x57FA;&#x4E8E;&#x7EBF;&#x7A0B;&#xFF0C;&#x7EBF;&#x7A0B;&#x548C;&#x8FDB;&#x7A0B;&#x7684;&#x533A;&#x522B;&#xFF1A;<ul>
 <li>&#x76F8;&#x540C;&#x70B9;&#x5728;&#x4E8E;&#xFF0C;&#x5B83;&#x4EEC;&#x90FD;&#x6709;&#x81EA;&#x5DF1;&#x7684;&#x903B;&#x8F91;&#x63A7;&#x5236;&#x6D41;&#xFF0C;&#x53EF;&#x4EE5;&#x5E76;&#x884C;&#xFF0C;&#x90FD;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x4E0A;&#x4E0B;&#x6587;&#x5207;&#x6362;&#x3002;</li>
 <li>&#x4E0D;&#x540C;&#x70B9;&#x5728;&#x4E8E;&#xFF0C;&#x7EBF;&#x7A0B;&#x5171;&#x4EAB;&#x4EE3;&#x7801;&#x548C;&#x6570;&#x636E;&#xFF08;&#x8FDB;&#x7A0B;&#x901A;&#x5E38;&#x4E0D;&#x4F1A;&#xFF09;&#xFF0C;&#x7EBF;&#x7A0B;&#x5F00;&#x9500;&#x6BD4;&#x8F83;&#x5C0F;&#xFF08;&#x521B;&#x5EFA;&#x548C;&#x56DE;&#x6536;&#xFF09;</li>
+<li>&#x7F3A;&#x70B9;&#xFF1A;&#x5171;&#x4EAB;&#x53D8;&#x91CF;&#x53EF;&#x80FD;&#x4F1A;&#x9020;&#x6210;&#x6BD4;&#x8F83;&#x96BE;&#x53D1;&#x73B0;&#x7684;&#x7A0B;&#x5E8F;&#x95EE;&#x9898;&#xFF0C;&#x5F88;&#x96BE;&#x8C03;&#x8BD5;&#x548C;&#x6D4B;&#x8BD5;</li>
 <li>Pthreads API &#x662F;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x5E93;&#xFF08;POSIX Threads&#xFF09;</li>
 <li>Pthreads API &#x4E2D;&#x5927;&#x81F4;&#x5171;&#x6709; 100 &#x4E2A;&#x51FD;&#x6570;&#x8C03;&#x7528;&#xFF0C;&#x5168;&#x90FD;&#x4EE5; pthread_ &#x5F00;&#x5934;&#xFF0C;&#x5E76;&#x53EF;&#x4EE5;&#x5206;&#x4E3A;&#x56DB;&#x7C7B;&#xFF1A;<ol>
 <li>&#x7EBF;&#x7A0B;&#x7BA1;&#x7406;&#xFF0C;&#x4F8B;&#x5982;&#x521B;&#x5EFA;&#x7EBF;&#x7A0B;&#xFF0C;&#x7B49;&#x5F85;(join)&#x7EBF;&#x7A0B;&#xFF0C;&#x67E5;&#x8BE2;&#x7EBF;&#x7A0B;&#x72B6;&#x6001;&#x7B49;&#x3002;</li>
@@ -314,6 +316,85 @@
 </ol>
 </li>
 <li>POSIX &#x7684; Semaphore API &#x53EF;&#x4EE5;&#x548C; Pthreads &#x534F;&#x540C;&#x5DE5;&#x4F5C;&#xFF0C;&#x4F46;&#x8FD9;&#x5E76;&#x4E0D;&#x662F; Pthreads &#x7684;&#x6807;&#x51C6;&#xFF0C;&#x8FD9;&#x90E8;&#x5206;API&#x662F;&#x4EE5; sem_ &#x6253;&#x5934;</li>
+</ul>
+</li>
+</ol>
+<h4 id="&#x7EBF;&#x7A0B;&#x7684;&#x540C;&#x6B65;&#x793A;&#x4F8B;&#x662F;threadtest1">&#x7EBF;&#x7A0B;&#x7684;&#x540C;&#x6B65;(&#x793A;&#x4F8B;&#x662F;thread_test1)</h4>
+<ol>
+<li>&#x5728;&#x7EBF;&#x7A0B;&#x4E2D;&#x7684;&#x4EE3;&#x7801; for (i = 0; i &lt; niters; i++) cnt++; &#x5177;&#x4F53;&#x7684;&#x6B65;&#x9AA4;&#x5206;&#x6210; 5 &#x6B65;&#xFF1A;HLUST</li>
+<li>H&#xFF1A;<ul>
+<li>movq    (%rdi), %rcx</li>
+<li>testq   %rcx, %rcx</li>
+<li>jle     .L2</li>
+<li>movl    $0, %eax</li>
+</ul>
+</li>
+<li>LUS&#xFF1A;<ul>
+<li>movq    cnt(%rip), %rdx # &#x8F7D;&#x5165; cnt&#xFF0C;&#x8BB0;&#x4E3A; L</li>
+<li>addq    $1, %rdx        # &#x66F4;&#x65B0; cnt&#xFF0C;&#x8BB0;&#x4E3A; U</li>
+<li>movq    %rdx, cnt(%rip) # &#x4FDD;&#x5B58; cnt&#xFF0C;&#x8BB0;&#x4E3A; S</li>
+</ul>
+</li>
+<li>T&#xFF08;&#x5373;Tail&#x90E8;&#x5206;&#xFF09;&#xFF1A;<ul>
+<li>addq    $1, %rax</li>
+<li>cmpq    %rcx, %rax</li>
+<li>jne     .L3</li>
+</ul>
+</li>
+<li>LUS &#x8FD9;&#x4E09;&#x4E2A;&#x64CD;&#x4F5C;&#x5FC5;&#x987B;&#x5728;&#x4E00;&#x6B21;&#x6267;&#x884C;&#x4E2D;&#x5B8C;&#x6210;&#xFF0C;&#x4E00;&#x65E6;&#x6B21;&#x5E8F;&#x6253;&#x4E71;&#xFF0C;&#x5C31;&#x4F1A;&#x51FA;&#x73B0;&#x95EE;&#x9898;&#xFF0C;&#x4E0D;&#x540C;&#x7EBF;&#x7A0B;&#x62FF;&#x5230;&#x7684;&#x503C;&#x5C31;&#x4E0D;&#x4E00;&#x5B9A;&#x662F;&#x6700;&#x65B0;&#x7684;&#x3002;</li>
+<li>&#x7EBF;&#x7A0B;&#x95F4;&#x7684;&#x540C;&#x6B65;&#x53EF;&#x4EE5;&#x7528;&#x4FE1;&#x53F7;&#x91CF;&#x89E3;&#x51B3;(&#x793A;&#x4F8B;&#x662F;thread_test2)</li>
+</ol>
+<h4 id="&#x8BFB;&#x8005;-&#x5199;&#x8005;&#x95EE;&#x9898;">&#x8BFB;&#x8005;-&#x5199;&#x8005;&#x95EE;&#x9898;</h4>
+<ol>
+<li>&#x662F;&#x4E92;&#x65A5;&#x95EE;&#x9898;&#x7684;&#x901A;&#x7528;&#x63CF;&#x8FF0;&#xFF0C;&#x5177;&#x4F53;&#x4E3A;&#xFF1A;<ul>
+<li>&#x8BFB;&#x8005;&#x7EBF;&#x7A0B;&#x53EA;&#x8BFB;&#x53D6;&#x5BF9;&#x8C61;</li>
+<li>&#x5199;&#x8005;&#x7EBF;&#x7A0B;&#x4FEE;&#x6539;&#x5BF9;&#x8C61;</li>
+<li>&#x5199;&#x8005;&#x5BF9;&#x4E8E;&#x5BF9;&#x8C61;&#x7684;&#x8BBF;&#x95EE;&#x662F;&#x4E92;&#x65A5;&#x7684;</li>
+<li>&#x591A;&#x4E2A;&#x8BFB;&#x8005;&#x53EF;&#x4EE5;&#x540C;&#x65F6;&#x8BFB;&#x53D6;&#x5BF9;&#x8C61;</li>
+</ul>
+</li>
+<li>&#x7B2C;&#x4E00;&#x7C7B;&#x8BFB;&#x8005;&#x5199;&#x8005;&#x95EE;&#x9898;&#xFF08;&#x8BFB;&#x8005;&#x4F18;&#x5148;&#xFF09;<ul>
+<li>&#x5982;&#x679C;&#x5199;&#x8005;&#x6CA1;&#x6709;&#x83B7;&#x53D6;&#x5230;&#x4F7F;&#x7528;&#x5BF9;&#x8C61;&#x7684;&#x6743;&#x9650;&#xFF0C;&#x4E0D;&#x5E94;&#x8BE5;&#x8BA9;&#x8BFB;&#x8005;&#x7B49;&#x5F85;</li>
+<li>&#x5728;&#x7B49;&#x5F85;&#x7684;&#x5199;&#x8005;&#x4E4B;&#x540E;&#x5230;&#x6765;&#x7684;&#x8BFB;&#x8005;&#x5E94;&#x8BE5;&#x5728;&#x5199;&#x8005;&#x4E4B;&#x524D;&#x5904;&#x7406;</li>
+<li>&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;&#x53EA;&#x6709;&#x6CA1;&#x6709;&#x8BFB;&#x8005;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5199;&#x8005;&#x624D;&#x80FD;&#x5DE5;&#x4F5C;</li>
+</ul>
+</li>
+<li>&#x7B2C;&#x4E8C;&#x7C7B;&#x8BFB;&#x8005;&#x5199;&#x8005;&#x95EE;&#x9898;&#xFF08;&#x5199;&#x8005;&#x4F18;&#x5148;&#xFF09;<ul>
+<li>&#x4E00;&#x65E6;&#x5199;&#x8005;&#x53EF;&#x4EE5;&#x5904;&#x7406;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5C31;&#x4E0D;&#x5E94;&#x8BE5;&#x8FDB;&#x884C;&#x7B49;&#x5F85;</li>
+<li>&#x5728;&#x7B49;&#x5F85;&#x7684;&#x5199;&#x8005;&#x4E4B;&#x540E;&#x5230;&#x6765;&#x7684;&#x8BFB;&#x8005;&#x5E94;&#x8BE5;&#x5728;&#x5199;&#x8005;&#x4E4B;&#x540E;&#x5904;&#x7406;</li>
+</ul>
+</li>
+</ol>
+<h4 id="&#x7EBF;&#x7A0B;&#x5B89;&#x5168;">&#x7EBF;&#x7A0B;&#x5B89;&#x5168;</h4>
+<ol>
+<li>&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#x51FD;&#x6570;&#xFF1A;&#x5728;&#x591A;&#x7EBF;&#x7A0B;&#x73AF;&#x5883;&#x4E0B;&#x5373;&#x4F7F;&#x6267;&#x884C;&#x591A;&#x6B21;&#xFF0C;&#x6BCF;&#x6B21;&#x7684;&#x7ED3;&#x679C;&#x59CB;&#x7EC8;&#x662F;&#x4E00;&#x6837;&#x7684;</li>
+<li>&#x4E3B;&#x8981;&#x6709; 4 &#x7C7B;&#x7EBF;&#x7A0B;&#x4E0D;&#x5B89;&#x5168;&#x7684;&#x51FD;&#x6570;<ul>
+<li>&#x4E0D;&#x4FDD;&#x62A4;&#x5171;&#x4EAB;&#x53D8;&#x91CF;&#x7684;&#x51FD;&#x6570;<ol>
+<li>&#x89E3;&#x51B3;&#x529E;&#x6CD5;&#xFF1A;&#x4F7F;&#x7528; P &#x548C; V semaphore &#x64CD;&#x4F5C;</li>
+<li>&#x95EE;&#x9898;&#xFF1A;&#x540C;&#x6B65;&#x64CD;&#x4F5C;&#x4F1A;&#x5F71;&#x54CD;&#x6027;&#x80FD;</li>
+</ol>
+</li>
+<li>&#x5728;&#x591A;&#x6B21;&#x8C03;&#x7528;&#x95F4;&#x4FDD;&#x5B58;&#x72B6;&#x6001;&#x7684;&#x51FD;&#x6570;<ol>
+<li>&#x89E3;&#x51B3;&#x529E;&#x6CD5;&#xFF1A;&#x628A;&#x72B6;&#x6001;&#x5F53;&#x505A;&#x4F20;&#x5165;&#x53C2;&#x6570;</li>
+</ol>
+</li>
+<li>&#x8FD4;&#x56DE;&#x6307;&#x5411;&#x9759;&#x6001;&#x53D8;&#x91CF;&#x7684;&#x6307;&#x9488;&#x7684;&#x51FD;&#x6570;<ol>
+<li>&#x89E3;&#x51B3;&#x529E;&#x6CD5;1&#xFF1A;&#x91CD;&#x5199;&#x51FD;&#x6570;&#xFF0C;&#x4F20;&#x5730;&#x5740;&#x7528;&#x4EE5;&#x4FDD;&#x5B58;</li>
+<li>&#x89E3;&#x51B3;&#x529E;&#x6CD5;2&#xFF1A;&#x4E0A;&#x9501;&#xFF0C;&#x5E76;&#x4E14;&#x8FDB;&#x884C;&#x590D;&#x5236;</li>
+</ol>
+</li>
+<li>&#x8C03;&#x7528;&#x7EBF;&#x7A0B;&#x4E0D;&#x5B89;&#x5168;&#x51FD;&#x6570;&#x7684;&#x51FD;&#x6570;<ol>
+<li>&#x89E3;&#x51B3;&#x529E;&#x6CD5;&#xFF1A;&#x53EA;&#x8C03;&#x7528;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#x7684;&#x51FD;&#x6570;</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>&#x6807;&#x51C6; C &#x5E93;&#x4E2D;&#x7684;&#x51FD;&#x6570;&#x90FD;&#x662F;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#x7684;&#xFF08;&#x5982; malloc, free, printf, scanf&#xFF09;</li>
+<li>&#x5E76;&#x884C;&#x7F16;&#x7A0B;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF1A;<ul>
+<li>&#x8981;&#x6709;&#x5E76;&#x884C;&#x7B56;&#x7565;&#xFF0C;&#x53EF;&#x4EE5;&#x628A;&#x4E00;&#x4E2A;&#x5927;&#x4EFB;&#x52A1;&#x5206;&#x6210;&#x82E5;&#x5E72;&#x4E2A;&#x72EC;&#x7ACB;&#x7684;&#x5B50;&#x4EFB;&#x52A1;&#xFF0C;&#x6216;&#x8005;&#x7528;&#x5206;&#x800C;&#x6CBB;&#x4E4B;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x89E3;&#x51B3;</li>
+<li>&#x5185;&#x5FAA;&#x73AF;&#x6700;&#x597D;&#x4E0D;&#x8981;&#x6709;&#x4EFB;&#x4F55;&#x540C;&#x6B65;&#x673A;&#x5236;</li>
+<li>&#x6CE8;&#x610F; Amdahl&#x2019;s Law&#xFF08;&#x4E32;&#x884C;&#x4EE3;&#x7801;&#x8D8A;&#x591A;&#xFF0C;&#x5E76;&#x884C;&#x6548;&#x7387;&#x6307;&#x6570;&#x9012;&#x51CF;&#xFF09;</li>
+<li>&#x4E00;&#x81F4;&#x6027;&#x662F;&#x4E2A;&#x5927;&#x95EE;&#x9898;&#xFF0C;&#x65E0;&#x8BBA;&#x662F;&#x8BA1;&#x7B97;&#x4E00;&#x81F4;&#x6027;&#x8FD8;&#x662F;&#x5B58;&#x50A8;&#x4E00;&#x81F4;&#x6027;&#xFF0C;&#x90FD;&#x9700;&#x8981;&#x4ED4;&#x7EC6;&#x8003;&#x8651;</li>
 </ul>
 </li>
 </ol>
@@ -356,7 +437,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"9.网络编程","level":"1.10","depth":1,"previous":{"title":"8.网络编程","level":"1.9","depth":1,"path":"docs/8.md","ref":"docs/8.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"docs/9.md","mtime":"2020-12-25T03:46:40.561Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-25T03:47:07.341Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"9.网络编程","level":"1.10","depth":1,"previous":{"title":"8.网络编程","level":"1.9","depth":1,"path":"docs/8.md","ref":"docs/8.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"docs/9.md","mtime":"2020-12-25T07:37:23.806Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-25T07:37:54.691Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
