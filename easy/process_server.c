@@ -9,18 +9,25 @@ int main(int argc, char **argv) {
     char client_hostname[MAXLINE], client_port[MAXLINE];
 
     // 开启监听端口，注意只开这么一次
-    listenfd = Open_listenfd(201);
+    listenfd = Open_listenfd(12102);
     while (1) {
         // 需要具体的大小
         clientlen = sizeof(struct sockaddr_storage); // Important!
         // 等待连接
         connfd = Accept(listenfd, (SA *) &clientaddr, &clientlen);
-        // 获取客户端相关信息
-        getnameinfo((SA *) &clientaddr, clientlen, client_hostname,
-                    MAXLINE, client_port, MAXLINE, 0);
-        printf("Connected to (%s, %s)\n", client_hostname, client_port);
-        // 服务器具体完成的工作
-        echo(connfd);
+
+        // fork进程来处理请求
+        if (Fork() == 0) {
+            Close(listenfd);
+            getnameinfo((SA *) &clientaddr, clientlen, client_hostname,
+                        MAXLINE, client_port, MAXLINE, 0);
+            printf("Connected to (%s, %s)\n", client_hostname, client_port);
+            // 服务器具体完成的工作
+            echo(connfd);
+            Close(connfd);
+            exit(0);
+        }
+
         Close(connfd);
     }
     exit(0);

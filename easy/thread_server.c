@@ -1,29 +1,36 @@
 #include "csapp.h"
 
 void echo(int connfd);
+void *thread(void *vargp);
 
 int main(int argc, char **argv) {
-    int listenfd, connfd;
+    int listenfd, *connfdp;
     socklen_t clientlen;
     struct sockaddr_storage clientaddr; // Enough room for any addr
-    char client_hostname[MAXLINE], client_port[MAXLINE];
+    pthread_t tid;
 
     // 开启监听端口，注意只开这么一次
-    listenfd = Open_listenfd(201);
+    listenfd = Open_listenfd(12102);
     while (1) {
-        // 需要具体的大小
-        clientlen = sizeof(struct sockaddr_storage); // Important!
-        // 等待连接
-        connfd = Accept(listenfd, (SA *) &clientaddr, &clientlen);
-        // 获取客户端相关信息
-        getnameinfo((SA *) &clientaddr, clientlen, client_hostname,
-                    MAXLINE, client_port, MAXLINE, 0);
-        printf("Connected to (%s, %s)\n", client_hostname, client_port);
-        // 服务器具体完成的工作
-        echo(connfd);
-        Close(connfd);
+        clientlen = sizeof(struct sockaddr_storage);
+        // 这里使用新分配的 connected descriptor 来避免竞争条件
+        connfdp = (int *) Malloc(sizeof(int));
+        *connfdp = Accept(listenfd, (SA *) &clientaddr, &clientlen);
+        Pthread_create(&tid, NULL, thread, connfdp);
     }
     exit(0);
+}
+
+// Thread routine
+void *thread(void *vargp) {
+    int connfd = *((int *) vargp);
+    // detach 之后不用显式 join，会在执行完毕后自动回收
+    Pthread_detach(pthread_self());
+    Free(vargp);
+    echo(connfd);
+    // 一定要记得关闭！
+    Close(connfd);
+    return NULL;
 }
 
 void echo(int connfd) {
