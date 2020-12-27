@@ -11,3 +11,6 @@
 * [7.虚拟内存与动态内存分配](docs/7.md)
 * [8.网络编程](docs/8.md)
 * [9.并行和同步](docs/9.md)
+* 10.网友笔记
+  * [a.CSAPP深入理解计算机系统笔记·CSDN](docs/notea.md)
+  * [b.深入理解计算机系统·语雀](docs/noteb.md)
