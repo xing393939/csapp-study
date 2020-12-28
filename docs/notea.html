@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>a.CSAPP深入理解计算机系统笔记·CSDN · GitBook</title>
+        <title>a.CSAPP深入理解计算机系统·CSDN · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -238,7 +238,7 @@
                 <a href="notea.html">
             
                     
-                    a.CSAPP深入理解计算机系统笔记·CSDN
+                    a.CSAPP深入理解计算机系统·CSDN
             
                 </a>
             
@@ -294,7 +294,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >a.CSAPP深入理解计算机系统笔记·CSDN</a>
+        <a href=".." >a.CSAPP深入理解计算机系统·CSDN</a>
     </h1>
 </div>
 
@@ -309,7 +309,7 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h3 id="csapp&#x6DF1;&#x5165;&#x7406;&#x89E3;&#x8BA1;&#x7B97;&#x673A;&#x7CFB;&#x7EDF;&#x7B14;&#x8BB0;&#xB7;csdn">CSAPP&#x6DF1;&#x5165;&#x7406;&#x89E3;&#x8BA1;&#x7B97;&#x673A;&#x7CFB;&#x7EDF;&#x7B14;&#x8BB0;&#xB7;CSDN</h3>
+                                <h3 id="csapp&#x6DF1;&#x5165;&#x7406;&#x89E3;&#x8BA1;&#x7B97;&#x673A;&#x7CFB;&#x7EDF;&#xB7;csdn">CSAPP&#x6DF1;&#x5165;&#x7406;&#x89E3;&#x8BA1;&#x7B97;&#x673A;&#x7CFB;&#x7EDF;&#xB7;CSDN</h3>
 <h4 id="&#x7B2C;&#x4E8C;&#x7AE0;&#xFF1A;&#x4FE1;&#x606F;&#x7684;&#x8868;&#x793A;&#x548C;&#x5904;&#x7406;">&#x7B2C;&#x4E8C;&#x7AE0;&#xFF1A;&#x4FE1;&#x606F;&#x7684;&#x8868;&#x793A;&#x548C;&#x5904;&#x7406;</h4>
 <ol>
 <li>&#x4E09;&#x79CD;&#x6700;&#x5E38;&#x7528;&#x7684;&#x8868;&#x793A;&#x6570;&#x5B57;&#x7684;&#x65B9;&#x6CD5;&#xFF1A;<ul>
@@ -342,6 +342,61 @@
 <li>&#x7B97;&#x6570;&#x53F3;&#x79FB;&#xFF1A;&#x5373;&#x53F3;&#x79FB;&#x65F6;&#x5DE6;&#x8FB9;&#x8865;&#x6700;&#x9AD8;&#x4F4D;&#x7684;&#x503C;&#x3002;</li>
 </ol>
 </li>
+</ul>
+</li>
+</ol>
+<h4 id="&#x7B2C;&#x4E09;&#x7AE0;&#xFF1A;&#x673A;&#x5668;&#x7EA7;&#x7684;&#x4EE3;&#x7801;&#x8868;&#x793A;">&#x7B2C;&#x4E09;&#x7AE0;&#xFF1A;&#x673A;&#x5668;&#x7EA7;&#x7684;&#x4EE3;&#x7801;&#x8868;&#x793A;</h4>
+<ol>
+<li>leaq&#xFF0C;&#x7C7B;&#x4F3C;mov&#xFF0C;&#x4F46;&#x662F;&#x4E0D;&#x5F15;&#x7528;&#x6E90;&#x64CD;&#x4F5C;&#x6570;&#x5BC4;&#x5B58;&#x5668;&#x7684;&#x503C;</li>
+<li>&#x4F4D;&#x7684;&#x8FD0;&#x7B97;<ul>
+<li>addq Src, Dest    //Dest = Dest + Src</li>
+<li>subq Src, Dest    //Dest = Dest - Src</li>
+<li>imulq Src, Dest //Dest = Dest * Src</li>
+<li>salq Src, Dest    //Dest = Dest&lt;&lt;Src &#x4E5F;&#x79F0;&#x4E3A;shlq</li>
+<li>sarq Src, Dest  //Dest = Dest&gt;&gt;Src &#x7B97;&#x6570;&#x53F3;&#x79FB;</li>
+<li>shrq Src, Dest    //Dest = Dest&lt;&lt;Src &#x903B;&#x8F91;&#x53F3;&#x79FB;</li>
+<li>xorq Src, Dest  //Dest = Dest ^ Src</li>
+<li>andq Src, Dest  //Dest = Dest &amp; Src</li>
+<li>orq Src, Dest      //Dest = Dest | Src</li>
+</ul>
+</li>
+<li>&#x7279;&#x6B8A;&#x7B97;&#x672F;&#x8FD0;&#x7B97;&#xFF1A;<ul>
+<li>imull S //&#x6709;&#x7B26;&#x53F7;&#x5168;64&#x4F4D;&#x4E58;&#x6CD5;</li>
+<li>mull S //&#x65E0;&#x7B26;&#x53F7;&#x5168;64&#x4F4D;&#x4E58;&#x6CD5;</li>
+<li>cltd //convert long to double&#x8F6C;&#x4E3A;4&#x5B57;</li>
+<li>idivl S //&#x6709;&#x7B26;&#x53F7;&#x9664;&#x6CD5;</li>
+<li>divl S //&#x65E0;&#x7B26;&#x53F7;&#x9664;&#x6CD5;</li>
+</ul>
+</li>
+<li>&#x8DF3;&#x8F6C;&#x6307;&#x4EE4;<ul>
+<li>jmp    Always jump    </li>
+<li>ja    Jump if above(unsigned &gt;)</li>
+<li>je/jz    Jump if eq / zero    </li>
+<li>jae    Jump if above / equal</li>
+<li>jne/jnz    Jump if !eq / !zero    </li>
+<li>jb    Jump if below(unsigned &lt;)</li>
+<li>jg    Jump if greater    </li>
+<li>jbe    Jump if below / equal</li>
+<li>jge    Jump if greater / eq    </li>
+<li>js    Jump if sign bits is 1(neg)</li>
+<li>jl    Jump if less    </li>
+<li>jns    Jump if sign bit is 0 (pos)</li>
+<li>jle    Jump if less / eq</li>
+</ul>
+</li>
+</ol>
+<h4 id="&#x7B2C;&#x4E09;&#x7AE0;-&#x6808;&#x5E27;">&#x7B2C;&#x4E09;&#x7AE0; &#x6808;&#x5E27;</h4>
+<ol>
+<li>pushq Src &#x6307;&#x4EE4;&#xFF1A;<ul>
+<li>&#x83B7;&#x53D6;Src&#x5904;&#x7684;&#x64CD;&#x4F5C;&#x6570;</li>
+<li>&#x5C06;%rsp&#x503C;&#x51CF;8</li>
+<li>&#x5728;%rsp&#x6307;&#x5411;&#x7684;&#x5730;&#x5740;&#x5904;&#x5199;&#x5165;&#x64CD;&#x4F5C;&#x6570;</li>
+</ul>
+</li>
+<li>popq Dest &#x6307;&#x4EE4;&#xFF1A;<ul>
+<li>&#x8BFB;&#x53D6;%rsp&#x6307;&#x5411;&#x7684;&#x5730;&#x5740;&#x5904;&#x7684;&#x503C;</li>
+<li>&#x5C06;%rsp&#x503C;&#x52A0;8</li>
+<li>&#x5C06;&#x8BFB;&#x53D6;&#x7684;&#x503C;&#x5B58;&#x5165;Dest&#xFF08;&#x901A;&#x5E38;&#x662F;&#x4E2A;&#x5BC4;&#x5B58;&#x5668;&#xFF09;</li>
 </ul>
 </li>
 </ol>
@@ -384,7 +439,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"a.CSAPP深入理解计算机系统笔记·CSDN","level":"1.11.1","depth":2,"next":{"title":"b.深入理解计算机系统·语雀","level":"1.11.2","depth":2,"path":"docs/noteb.md","ref":"docs/noteb.md","articles":[]},"previous":{"title":"10.网友笔记","level":"1.11","depth":1,"ref":"","articles":[{"title":"a.CSAPP深入理解计算机系统笔记·CSDN","level":"1.11.1","depth":2,"path":"docs/notea.md","ref":"docs/notea.md","articles":[]},{"title":"b.深入理解计算机系统·语雀","level":"1.11.2","depth":2,"path":"docs/noteb.md","ref":"docs/noteb.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"docs/notea.md","mtime":"2020-12-27T08:11:00.548Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-27T08:11:26.985Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"a.CSAPP深入理解计算机系统·CSDN","level":"1.11.1","depth":2,"next":{"title":"b.深入理解计算机系统·语雀","level":"1.11.2","depth":2,"path":"docs/noteb.md","ref":"docs/noteb.md","articles":[]},"previous":{"title":"10.网友笔记","level":"1.11","depth":1,"ref":"","articles":[{"title":"a.CSAPP深入理解计算机系统·CSDN","level":"1.11.1","depth":2,"path":"docs/notea.md","ref":"docs/notea.md","articles":[]},{"title":"b.深入理解计算机系统·语雀","level":"1.11.2","depth":2,"path":"docs/noteb.md","ref":"docs/noteb.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"docs/notea.md","mtime":"2020-12-28T09:33:27.950Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-28T09:33:51.234Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
