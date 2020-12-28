@@ -128,6 +128,7 @@ var IdealImageSlider = (function() {
 			var img = new Image();
 			img.setAttribute('src', slide.getAttribute('data-src'));
 			img.onload = function() {
+				slide.style.backgroundSize = 'contain';
 				slide.style.backgroundImage = 'url(' + slide.getAttribute('data-src') + ')';
 				slide.setAttribute('data-actual-width', this.naturalWidth);
 				slide.setAttribute('data-actual-height', this.naturalHeight);
