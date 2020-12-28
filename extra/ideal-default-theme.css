@@ -81,7 +81,7 @@ a.iis-next-nav {
 			transition: 0.3s ease-out;
 }
 .iis-bullet-nav a.iis-bullet-active,
-.iis-bullet-nav a:hover { background: #fff; }
+.iis-bullet-nav a:hover { background: #000; }
 .ideal-image-slider:hover .iis-bullet-nav { opacity: 0.7; }
 .ideal-image-slider:hover .iis-bullet-nav:hover { opacity: 1.0; }
 
