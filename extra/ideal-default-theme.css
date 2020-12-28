@@ -12,8 +12,8 @@
 }
 
 /* Navigation */
-.iis-previous-nav,
-.iis-next-nav {
+a.iis-previous-nav,
+a.iis-next-nav {
 	position: absolute;
 	top: 50%;
 	z-index: 20;
