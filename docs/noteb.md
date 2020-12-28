@@ -1,6 +1,7 @@
 <link rel="stylesheet" href="../extra/ideal-image-slider.css">
 <link rel="stylesheet" href="../extra/ideal-default-theme.css">
 <script src="../extra/ideal-image-slider.js"></script>
+<script src="../extra/ideal-iis-bullet-nav.js"></script>
 
 ### 深入理解计算机系统·语雀
 
