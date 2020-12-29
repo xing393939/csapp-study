@@ -11,6 +11,16 @@
 (function(IIS) {
 	"use strict";
 
+	var _insertAfter = function(newEl, targetEl)
+	{
+		var parentEl = targetEl.parentNode;
+		if(parentEl.lastChild == targetEl) {
+			parentEl.appendChild(newEl);
+		} else {
+			parentEl.insertBefore(newEl, targetEl.nextSibling);
+		}
+	}
+
 	var _updateActiveBullet = function(slider, activeIndex) {
 		var bullets = slider._attributes.bulletNav.querySelectorAll('a');
 		if (!bullets) return;
@@ -49,7 +59,7 @@
 		}.bind(this));
 
 		this._attributes.bulletNav = bulletNav;
-		this._attributes.container.appendChild(bulletNav);
+		this._insertAfter(bulletNav, this._attributes.container);
 		_updateActiveBullet(this, 0);
 
 		// Hook up to afterChange events

@@ -8,6 +8,7 @@
 	background-repeat: no-repeat;
 	background-position: 50% 50%;
 	background-size: 32px 32px;
+	border: 1px solid #000;
 }
 
 /* Navigation */
@@ -51,17 +52,8 @@ a.iis-next-nav {
 
 /* Bullet Navigation */
 .iis-bullet-nav {
-	position: absolute;
-	bottom: 5%;
-	right: 5%;
-	z-index: 15;
-	width: 90%;
 	text-align: right;
-	opacity: 0.4;
-	-webkit-transition: 0.3s ease-out;
-	   -moz-transition: 0.3s ease-out;
-		 -o-transition: 0.3s ease-out;
-			transition: 0.3s ease-out;
+	background: #000;
 }
 .iis-has-captions .iis-bullet-nav { max-width: 42%; }
 .iis-bullet-nav a {

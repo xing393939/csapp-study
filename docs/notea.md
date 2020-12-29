@@ -6,6 +6,7 @@
 var gitbook = gitbook || [];
 gitbook.push(function() {
     let slider = new IdealImageSlider.Slider('.IdealImageSlider');
+    slider.addBulletNav();
 })
 </script>
 
@@ -103,4 +104,31 @@ int main(int argc)
     <img src="../images/call_stack/10.png" />
     <img src="../images/call_stack/11.png" />
 </div>
+
+1. 在运行时，每一栈帧将对应两个寄存器：
+  * %ebp指向的单元保存上一栈帧的%ebp；
+  * 在进入下一函数前，%esp指向的单元保存当前栈帧的返回地址。
+1. 栈帧中的内容(高地址~低地址)：
+  * %ebp+4，返回地址
+  * %rbp，上一栈帧的%ebp
+  * 局部存储信息（如果需要的话），比如寄存器的值
+  * 暂时的空间（如果需要的话），比如局部变量
+  * 调用其他函数时可能需要的参数
+1. 管理方法：
+  * 当进入某一过程时开辟空间
+    1. set up 代码
+    1. call指令包含了push
+  * 离开过程时释放空间
+    1. finish 代码
+    1. ret指令包含了pop
+1. 函数的参数用哪些寄存器来存放呢？
+  * 按惯例，前6个arguments存放在：%rdi、%rsi、%rdx、%rcx、%r8、%r9
+  * 超过了6个，更多的参数则存放到栈中
+  * 函数的返回值使用寄存器%rax来保存
+1. 在函数调用时由谁保管暂时值？
+  * “caller saved”：由caller在它自己的frame中保管暂存值，在执行call之前保管
+  * “callee saved”：由callee在它的frame中保管；callee负责在返回给caller时恢复寄存器们的值
+
+
+
 
