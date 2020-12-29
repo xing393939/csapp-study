@@ -12,6 +12,9 @@ gitbook.push(function() {
 
 ### CSAPP深入理解计算机系统·CSDN
 
+#### 参考资料
+1. [CSAPP深入理解计算机系统笔记](https://blog.csdn.net/qq_41230365/article/details/88638784)
+
 #### 第二章：信息的表示和处理
 1. 三种最常用的表示数字的方法：
   * unsigned无符号整型

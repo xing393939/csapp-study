@@ -12,10 +12,5 @@ gitbook.push(function() {
 
 ### 深入理解计算机系统·语雀
 
-#### A
-
-<div class="IdealImageSlider">
-    <img src="../images/Picture1.png" alt="Slide 1" />
-    <img src="../images/Picture2.png" alt="Slide 2" />
-    <img src="../images/Picture3.png" alt="Slide 3" />
-</div>
+#### 参考资料
+1. [深入理解计算机系统.语雀](https://www.yuque.com/tvvhealth/cs/taaqns)
