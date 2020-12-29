@@ -6,7 +6,6 @@
 var gitbook = gitbook || [];
 gitbook.push(function() {
     let slider = new IdealImageSlider.Slider('.IdealImageSlider');
-    slider.addBulletNav();
 })
 </script>
 
@@ -83,6 +82,7 @@ int add(int a, int b)
     int result = a + b;
     return result;
 }
+
 int main(int argc)
 {
     int answer;
@@ -103,3 +103,4 @@ int main(int argc)
     <img src="../images/call_stack/10.png" />
     <img src="../images/call_stack/11.png" />
 </div>
+
