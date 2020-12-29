@@ -59,7 +59,7 @@
 		}.bind(this));
 
 		this._attributes.bulletNav = bulletNav;
-		this._insertAfter(bulletNav, this._attributes.container);
+		_insertAfter(bulletNav, this._attributes.container);
 		_updateActiveBullet(this, 0);
 
 		// Hook up to afterChange events
