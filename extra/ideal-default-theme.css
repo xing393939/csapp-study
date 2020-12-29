@@ -60,19 +60,14 @@ a.iis-next-nav {
 	display: inline-block;
 	width: 10px;
 	height: 10px;
-	background: transparent;
 	text-indent: 9999px;
 	margin: 0 5px;
 	border: 3px solid rgba(0,0,0,0.5);
 	border-radius: 10px;
-	cursor: pointer;
-	-webkit-transition: 0.3s ease-out;
-	   -moz-transition: 0.3s ease-out;
-		 -o-transition: 0.3s ease-out;
-			transition: 0.3s ease-out;
+	background: #999;
 }
 .iis-bullet-nav a.iis-bullet-active,
-.iis-bullet-nav a:hover { background: #000; }
+.iis-bullet-nav a:hover { background: #fff; }
 .ideal-image-slider:hover .iis-bullet-nav { opacity: 0.7; }
 .ideal-image-slider:hover .iis-bullet-nav:hover { opacity: 1.0; }
 
