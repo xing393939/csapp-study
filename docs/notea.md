@@ -65,3 +65,29 @@
   * 将%rsp值加8
   * 将读取的值存入Dest（通常是个寄存器）
 
+```
+int add(int a, int b)
+{
+    int result = a + b;
+    return result;
+}
+int main(int argc)
+{
+    int answer;
+    answer = add(40, 2);
+}
+```
+
+<div class="IdealImageSlider">
+    <img src="../images/call_stack/01.png" />
+    <img src="../images/call_stack/02.png" />
+    <img src="../images/call_stack/03.png" />
+    <img src="../images/call_stack/04.png" />
+    <img src="../images/call_stack/05.png" />
+    <img src="../images/call_stack/06.png" />
+    <img src="../images/call_stack/07.png" />
+    <img src="../images/call_stack/08.png" />
+    <img src="../images/call_stack/09.png" />
+    <img src="../images/call_stack/10.png" />
+    <img src="../images/call_stack/11.png" />
+</div>
