@@ -1,3 +1,15 @@
+<link rel="stylesheet" href="../extra/ideal-image-slider.css">
+<link rel="stylesheet" href="../extra/ideal-default-theme.css">
+<script src="../extra/ideal-image-slider.js"></script>
+<script src="../extra/ideal-iis-bullet-nav.js"></script>
+<script>
+var gitbook = gitbook || [];
+gitbook.push(function() {
+    let slider = new IdealImageSlider.Slider('.IdealImageSlider');
+    slider.addBulletNav();
+})
+</script>
+
 ### CSAPP深入理解计算机系统·CSDN
 
 #### 第二章：信息的表示和处理
