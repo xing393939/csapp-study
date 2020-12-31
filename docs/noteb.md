@@ -34,7 +34,7 @@ gitbook.push(function() {
 
 #### 三、程序的机器级表示
 1. 实数在汇编代码里的后缀
-![](../images/virtual_memory.png)
+![](../images/assembler_code_suffix.png)
 
 1.  数据传送指令：mov指令
   * mov S, D：S内容复制到D
