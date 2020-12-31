@@ -20,8 +20,7 @@ gitbook.push(function() {
   * shell中输入hello：字符串通过键盘IO，bus总线，存储到寄存器中，再由寄存器保存到主存中。
   * 输入回车键：shell开始执行hello，通过DMA技术不经过CPU把磁盘中的hello程序直接加载到主存中。
   * 处理器执行hello程序：将执行结果hello word复制到寄存器中，再从寄存器复制到显示设备，最终显示。
-1. 操作系统的抽象
-![](../images/operating_system.png)
+1. 操作系统的抽象<br/>![](../images/operating_system.png)
 
 1. 进程是操作系统对一个正在运行程序的抽象，计算机科学中最重要最成功的的概念。
 1. 并发运行，不同进程的指令交错执行。大多数系统中，进程数一般多于运行它们的CPU个数。
@@ -29,12 +28,10 @@ gitbook.push(function() {
   * 上下文（context），操作系统保持跟踪进程运行的所有状态信息，包括PC、寄存器、主存内容。
   * 上下文切换，即保存当前进程上下文，恢复新进程上下文，控制权转移给新进程，新进程从上次停止的地方开始。
   * 上下文切换由操作系统内核（kernel）完成，内核是操作系统代码常驻内存的部分，它不是进程，是系统管理全部进程所用的代码和数据结构的集合，可以简单理解为常驻内存的数据。
-1. 虚拟内存（所有进程的代码都是从同一固定地址开始）
-![](../images/virtual_memory.png)
+1. 虚拟内存（所有进程的代码都是从同一固定地址开始）<br/>![](../images/virtual_memory.png)
 
 #### 三、程序的机器级表示
-1. 实数在汇编代码里的后缀
-![](../images/assembler_code_suffix.png)
+1. 实数在汇编代码里的后缀<br/>![](../images/assembler_code_suffix.png)
 
 1.  数据传送指令：mov指令
   * mov S, D：S内容复制到D
@@ -55,7 +52,13 @@ gitbook.push(function() {
 |unsigned char *dp;<br/>unsigned *sp;<br/>*dp = (unsigned char) *sp;|movl (%rdi), %eax<br/>movb %al, (%rsi)|
 |short *dp;<br/>char *sp;<br/>*dp = (short) *sp;          |movsbw (%rdi), %ax<br/>movw %ax, (%rsi)  |
 
-
+1. 数据传送指令：pushq和popq
+1. push %rbp等价于如下汇编代码：
+  * subq $8, %rsp //%rsp值 - 8。
+  * movq %rbp, (%rsp) //8字节的%rbp的内容压栈。
+1. popq %rax 等价于如下汇编代码：
+  * movq (%rsp), %rax //把%rsp指向的内存地址的值赋给%rax
+  * addq $8, %rsp //%rsp值 + 8。
 
 
 
