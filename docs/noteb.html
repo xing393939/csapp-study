@@ -349,6 +349,61 @@ gitbook.push(function() {
 <li>&#x865A;&#x62DF;&#x5185;&#x5B58;&#xFF08;&#x6240;&#x6709;&#x8FDB;&#x7A0B;&#x7684;&#x4EE3;&#x7801;&#x90FD;&#x662F;&#x4ECE;&#x540C;&#x4E00;&#x56FA;&#x5B9A;&#x5730;&#x5740;&#x5F00;&#x59CB;&#xFF09;
 <img src="../images/virtual_memory.png" alt=""></li>
 </ol>
+<h4 id="&#x4E09;&#x3001;&#x7A0B;&#x5E8F;&#x7684;&#x673A;&#x5668;&#x7EA7;&#x8868;&#x793A;">&#x4E09;&#x3001;&#x7A0B;&#x5E8F;&#x7684;&#x673A;&#x5668;&#x7EA7;&#x8868;&#x793A;</h4>
+<ol>
+<li><p>&#x5B9E;&#x6570;&#x5728;&#x6C47;&#x7F16;&#x4EE3;&#x7801;&#x91CC;&#x7684;&#x540E;&#x7F00;
+<img src="../images/virtual_memory.png" alt=""></p>
+</li>
+<li><p>&#x6570;&#x636E;&#x4F20;&#x9001;&#x6307;&#x4EE4;&#xFF1A;mov&#x6307;&#x4EE4;</p>
+<ul>
+<li>mov S, D&#xFF1A;S&#x5185;&#x5BB9;&#x590D;&#x5236;&#x5230;D</li>
+<li>S&#x53EF;&#x4EE5;&#x662F;&#x7ACB;&#x5373;&#x6570;&#xFF0C;&#x5185;&#x5B58;&#x5730;&#x5740;&#xFF0C;&#x5BC4;&#x5B58;&#x5668;&#x5730;&#x5740;&#xFF1B;</li>
+<li>D&#x53EF;&#x4EE5;&#x662F;&#x5185;&#x5B58;&#x5730;&#x5740;&#xFF0C;&#x5BC4;&#x5B58;&#x5668;&#x5730;&#x5740;&#x3002;</li>
+<li>S&#x7684;D&#x4E0D;&#x80FD;&#x540C;&#x65F6;&#x662F;&#x5185;&#x5B58;&#x5730;&#x5740;</li>
+<li>movb&#xFF1A;&#x5BC4;&#x5B58;&#x5668;&#x5FC5;&#x987B;&#x662F;1byte&#xFF1B;movw&#xFF1A;&#x5BC4;&#x5B58;&#x5668;&#x5FC5;&#x987B;&#x662F;2byte&#xFF1B;movl&#xFF1A;&#x5BC4;&#x5B58;&#x5668;&#x5FC5;&#x987B;&#x662F;4byte&#xFF1B;movq&#xFF1A;&#x5BC4;&#x5B58;&#x5668;&#x5FC5;&#x987B;&#x662F;8byte&#x3002;</li>
+</ul>
+</li>
+<li>&#x6570;&#x636E;&#x4F20;&#x9001;&#x6307;&#x4EE4;&#xFF1A;movs&#x3002;&#x4F7F;&#x7528;&#x573A;&#x666F;&#x5982;&#xFF0C;char&#x7684;&#x6574;&#x5F62;&#x590D;&#x5236;&#x7ED9;int&#xFF0C;1byte&#x6269;&#x5C55;&#x6210;4byte</li>
+<li>C&#x8BED;&#x8A00;&#x5BF9;&#x5E94;&#x7684;&#x6C47;&#x7F16;&#x4EE3;&#x7801;</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>C&#x8BED;&#x8A00;</th>
+<th>&#x5BF9;&#x5E94;&#x6307;&#x4EE4;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>long <em>dp;<br>long </em>sp;<br><em>dp = (long) </em>sp;</td>
+<td>movq (%rdi), %rax<br>movq %rax, (%rsi)</td>
+</tr>
+<tr>
+<td>int <em>dp;<br>char </em>sp;<br><em>dp = (int) </em>sp;</td>
+<td>movsbl (%rdi), %eax<br>movl %eax, (%rsi)</td>
+</tr>
+<tr>
+<td>unsigned <em>dp;<br>char </em>sp;<br><em>dp = (unsigned int) </em>sp;</td>
+<td>movsbl (%rdi), %eax<br>movl %eax, (%rsi)</td>
+</tr>
+<tr>
+<td>long <em>dp;<br>unsinged char </em>sp;<br><em>dp = (long) </em>sp;</td>
+<td>movsbq (%rdi), %rax<br>movq %rax, (%rsi)</td>
+</tr>
+<tr>
+<td>char <em>dp;<br>int </em>sp;<br><em>dp = (char) </em>sp;</td>
+<td>movl (%rdi), %eax<br>movb %al, (%rsi)</td>
+</tr>
+<tr>
+<td>unsigned char <em>dp;<br>unsigned </em>sp;<br><em>dp = (unsigned char) </em>sp;</td>
+<td>movl (%rdi), %eax<br>movb %al, (%rsi)</td>
+</tr>
+<tr>
+<td>short <em>dp;<br>char </em>sp;<br><em>dp = (short) </em>sp;</td>
+<td>movsbw (%rdi), %ax<br>movw %ax, (%rsi)</td>
+</tr>
+</tbody>
+</table>
 
                                 
                                 </section>
@@ -388,7 +443,7 @@ gitbook.push(function() {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"b.深入理解计算机系统·语雀","level":"1.11.2","depth":2,"previous":{"title":"a.CSAPP深入理解计算机系统·CSDN","level":"1.11.1","depth":2,"path":"docs/notea.md","ref":"docs/notea.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"docs/noteb.md","mtime":"2020-12-31T08:10:23.873Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-31T08:10:50.417Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"b.深入理解计算机系统·语雀","level":"1.11.2","depth":2,"previous":{"title":"a.CSAPP深入理解计算机系统·CSDN","level":"1.11.1","depth":2,"path":"docs/notea.md","ref":"docs/notea.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"docs/noteb.md","mtime":"2020-12-31T09:12:19.349Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-12-31T09:12:46.278Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
