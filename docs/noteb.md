@@ -32,3 +32,30 @@ gitbook.push(function() {
 1. 虚拟内存（所有进程的代码都是从同一固定地址开始）
 ![](../images/virtual_memory.png)
 
+#### 三、程序的机器级表示
+1. 实数在汇编代码里的后缀
+![](../images/virtual_memory.png)
+
+1.  数据传送指令：mov指令
+  * mov S, D：S内容复制到D
+  * S可以是立即数，内存地址，寄存器地址；
+  * D可以是内存地址，寄存器地址。
+  * S的D不能同时是内存地址
+  * movb：寄存器必须是1byte；movw：寄存器必须是2byte；movl：寄存器必须是4byte；movq：寄存器必须是8byte。
+1. 数据传送指令：movs。使用场景如，char的整形复制给int，1byte扩展成4byte
+1. C语言对应的汇编代码
+
+|C语言 |对应指令 |
+| ---  |---     |
+|long *dp;<br/>long *sp;<br/>*dp = (long) *sp; |movq (%rdi), %rax<br/>movq %rax, (%rsi) |
+|int *dp;<br/>char *sp;<br/>*dp = (int) *sp;              |movsbl (%rdi), %eax<br/>movl %eax, (%rsi)|
+|unsigned *dp;<br/>char *sp;<br/>*dp = (unsigned int) *sp;|movsbl (%rdi), %eax<br/>movl %eax, (%rsi)|
+|long *dp;<br/>unsinged char *sp;<br/>*dp = (long) *sp;   |movsbq (%rdi), %rax<br/>movq %rax, (%rsi)|
+|char *dp;<br/>int *sp;<br/>*dp = (char) *sp;             |movl (%rdi), %eax<br/>movb %al, (%rsi)   |
+|unsigned char *dp;<br/>unsigned *sp;<br/>*dp = (unsigned char) *sp;|movl (%rdi), %eax<br/>movb %al, (%rsi)|
+|short *dp;<br/>char *sp;<br/>*dp = (short) *sp;          |movsbw (%rdi), %ax<br/>movw %ax, (%rsi)  |
+
+
+
+
+
