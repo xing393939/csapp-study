@@ -11,10 +11,10 @@ void show_bytes(pointer start, size_t len) {
 
 int main(void) {
     /**
-     * 检测机器是不是小端规则，这里15213的16进制是00 00 3b 6d
+     * 检测机器是不是小端规则
      * 存储是从低地址->高地址，所以是小端规则
      */
-    int a = 15213;
-    printf("int a = 15213;\n");
-    show_bytes((pointer) &a, sizeof(int));
+    char a[5] = "0123";
+    printf("char a = %p\n", &a);
+    show_bytes((pointer) &a, 4);
 }
