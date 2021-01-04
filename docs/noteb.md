@@ -59,6 +59,13 @@ gitbook.push(function() {
 1. popq %rax 等价于如下汇编代码：
   * movq (%rsp), %rax //把%rsp指向的内存地址的值赋给%rax
   * addq $8, %rsp //%rsp值 + 8。
-
-
+1. 算术逻辑操作
+  * inc D //D += 1
+  * dec D //D -= 1
+  * neq D //D = -D
+  * not D //D = ~D
+  * add S D  //D = D + S
+  * sub S D  //D = D - S
+  * imul S D //D = D * S
+  * xor S D  //D = D ^ S
 
