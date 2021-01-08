@@ -122,7 +122,7 @@ int main(int argc, char **argv) {
         index = ((address >> b) & set_index_mask);
         tag = (address >> (b + s));
 
-        char *verbose;
+        char *verbose = "";
         int found = 0, evic = 0, val = 0;
 
         //-- go through each cache block
