@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>6.系统的输入输出 · GitBook</title>
+        <title>c.汇编指令对应的十六进制表示 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="7.html" />
     
-    
-    <link rel="prev" href="5.html" />
+    <link rel="prev" href="noteb.html" />
     
 
     </head>
@@ -169,7 +167,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.7" data-path="6.html">
+        <li class="chapter " data-level="1.7" data-path="6.html">
             
                 <a href="6.html">
             
@@ -261,7 +259,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.11.3" data-path="notec.html">
+        <li class="chapter active" data-level="1.11.3" data-path="notec.html">
             
                 <a href="notec.html">
             
@@ -341,7 +339,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >6.系统的输入输出</a>
+        <a href=".." >c.汇编指令对应的十六进制表示</a>
     </h1>
 </div>
 
@@ -356,31 +354,77 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h3 id="&#x7CFB;&#x7EDF;&#x7684;&#x8F93;&#x5165;&#x8F93;&#x51FA;">&#x7CFB;&#x7EDF;&#x7684;&#x8F93;&#x5165;&#x8F93;&#x51FA;</h3>
-<h4 id="&#x6587;&#x4EF6;&#x79CD;&#x7C7B;">&#x6587;&#x4EF6;&#x79CD;&#x7C7B;</h4>
+                                <p><link rel="stylesheet" href="../extra/ideal-image-slider.css"></p>
+<p><link rel="stylesheet" href="../extra/ideal-default-theme.css"></p>
+<script src="../extra/ideal-image-slider.js"></script>
+<script src="../extra/ideal-iis-bullet-nav.js"></script>
+<script>
+let gitbook = gitbook || [];
+gitbook.push(function() {
+    let slider = new IdealImageSlider.Slider('.IdealImageSlider');
+    slider.addBulletNav();
+});
+</script>
+
+<h3 id="&#x6C47;&#x7F16;&#x6307;&#x4EE4;&#x5BF9;&#x5E94;&#x7684;&#x5341;&#x516D;&#x8FDB;&#x5236;&#x8868;&#x793A;">&#x6C47;&#x7F16;&#x6307;&#x4EE4;&#x5BF9;&#x5E94;&#x7684;&#x5341;&#x516D;&#x8FDB;&#x5236;&#x8868;&#x793A;</h3>
+<h4 id="&#x53C2;&#x8003;&#x8D44;&#x6599;">&#x53C2;&#x8003;&#x8D44;&#x6599;</h4>
 <ol>
-<li>elf&#x6587;&#x4EF6;</li>
-<li>&#x666E;&#x901A;&#x6587;&#x4EF6;<ul>
-<li>&#x6587;&#x672C;&#x6587;&#x4EF6;&#xFF1A;&#x53EA;&#x5305;&#x542B; ASCII &#x6216; Unicode &#x5B57;&#x7B26;&#x3002;&#x9664;&#x6B64;&#x4E4B;&#x5916;&#x7684;&#x90FD;&#x662F;&#x4E8C;&#x8FDB;&#x5236;&#x6587;&#x4EF6;</li>
-<li>&#x4E8C;&#x8FDB;&#x5236;&#x6587;&#x4EF6;&#xFF1A;&#x5BF9;&#x8C61;&#x6587;&#x4EF6;, JPEG &#x56FE;&#x7247;, &#x7B49;&#x7B49;</li>
-</ul>
-</li>
-<li>&#x76EE;&#x5F55;&#xFF1A;&#x6BCF;&#x4E2A;&#x76EE;&#x5F55;&#x81F3;&#x5C11;&#x5305;&#x542B;&#x4E24;&#x6761;&#x8BB0;&#x5F55;&#xFF1A;.(dot) &#x5F53;&#x524D;&#x76EE;&#x5F55;&#xFF1B;..(dot dot) &#x4E0A;&#x4E00;&#x5C42;&#x76EE;&#x5F55;</li>
-<li>dup2(oldfd, newfd) &#x8F93;&#x5165;&#x91CD;&#x5B9A;&#x5411;&#xFF0C;&#x52A0;&#x4E0A;oldfd&#x662F;&#x6807;&#x51C6;&#x8F93;&#x51FA;&#xFF0C;newfd&#x662F;&#x6587;&#x4EF6;&#xFF0C;&#x8868;&#x793A;&#x628A;&#x6807;&#x51C6;&#x8F93;&#x51FA;&#x91CD;&#x5B9A;&#x5411;&#x5230;&#x6587;&#x4EF6;</li>
+<li><a href="https://eun.github.io/Intel-Pentium-Instruction-Set-Reference" target="_blank">Intel Pentium Instruction Set Reference</a></li>
 </ol>
-<h4 id="&#x4E24;&#x79CD;-io-&#x65B9;&#x6CD5;">&#x4E24;&#x79CD; I/O &#x65B9;&#x6CD5;</h4>
-<ol>
-<li>Unix I/O: open, read, write, lseek, stat, close&#x3002;&#x51FD;&#x6570;&#x90FD;&#x662F;&#x90FD;&#x662F;&#x5F02;&#x6B65;&#x4FE1;&#x53F7;&#x5B89;&#x5168;&#x3002;<ul>
-<li>&#x56E0;&#x4E3A;&#x6BD4;&#x8F83;&#x5E95;&#x5C42;&#x548C;&#x57FA;&#x7840;&#x7684;&#x7F18;&#x6545;&#xFF0C;&#x9700;&#x8981;&#x5904;&#x7406;&#x7684;&#x60C5;&#x51B5;&#x975E;&#x5E38;&#x591A;&#xFF0C;&#x5F88;&#x5BB9;&#x6613;&#x51FA;&#x9519;&#x3002;</li>
-<li>&#x9AD8;&#x6548;&#x7387;&#x7684;&#x8BFB;&#x5199;&#x9700;&#x8981;&#x7528;&#x5230;&#x7F13;&#x51B2;&#x533A;&#xFF0C;&#x540C;&#x6837;&#x5BB9;&#x6613;&#x51FA;&#x9519;&#x3002;</li>
-</ul>
-</li>
-<li>&#x6807;&#x51C6; C I/O: fopen, fdopen, fread, fwrite, fgets, fputs, fflush, fseek, fclose&#x7B49;&#x3002;&#x51FD;&#x6570;&#x90FD;&#x4E0D;&#x662F;&#x5F02;&#x6B65;&#x4FE1;&#x53F7;&#x5B89;&#x5168;&#x7684;&#x3002;<ul>
-<li>&#x63D0;&#x4F9B;&#x4E86;&#x5E26;&#x7F13;&#x5B58;&#x8BBF;&#x95EE;&#x6587;&#x4EF6;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x4F7F;&#x7528;&#x7684;&#x65F6;&#x5019;&#x51E0;&#x4E4E;&#x4E0D;&#x7528;&#x8003;&#x8651;&#x592A;&#x591A;</li>
-<li>&#x8981;&#x5F97;&#x5230;&#x6587;&#x4EF6;&#x7684;&#x5143;&#x4FE1;&#x606F;&#x65F6;&#xFF0C;&#x5C31;&#x8FD8;&#x662F;&#x5F97;&#x4F7F;&#x7528; Unix I/O &#x4E2D;&#x7684; stat &#x51FD;&#x6570;</li>
-</ul>
-</li>
-</ol>
+<h4 id="csapp&#x4E0A;p482&#x7684;&#x4EE3;&#x7801;&#x793A;&#x4F8B;">CSAPP&#x4E0A;p482&#x7684;&#x4EE3;&#x7801;&#x793A;&#x4F8B;</h4>
+<pre><code class="lang-c"><span class="hljs-number">00000000004004</span>d0 &lt;main&gt;:
+<span class="hljs-number">4004</span>d0: <span class="hljs-number">48</span> <span class="hljs-number">83</span> ec <span class="hljs-number">08</span>     sub $<span class="hljs-number">0x8</span>,%rsp
+<span class="hljs-number">4004</span>d4: be <span class="hljs-number">02</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span>  mov $<span class="hljs-number">0x2</span>,%esi
+<span class="hljs-number">4004</span>d9: bf <span class="hljs-number">18</span> <span class="hljs-number">10</span> <span class="hljs-number">60</span> <span class="hljs-number">00</span>  mov $<span class="hljs-number">0x601018</span>,%edi
+<span class="hljs-number">4004</span>de: e8 <span class="hljs-number">05</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span>  callq <span class="hljs-number">4004e8</span> &lt;sum&gt;
+<span class="hljs-number">4004e3</span>: <span class="hljs-number">48</span> <span class="hljs-number">83</span> c4 <span class="hljs-number">08</span>     add $<span class="hljs-number">0x8</span>,%rsp
+<span class="hljs-number">4004e7</span>: c3              retq
+<span class="hljs-number">00000000004004e8</span> &lt;sum&gt;:
+<span class="hljs-number">4004e8</span>: b8 <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span>  mov $<span class="hljs-number">0x0</span>,%eax
+<span class="hljs-number">4004</span>ed: ba <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span> <span class="hljs-number">00</span>  mov $<span class="hljs-number">0x0</span>,%edx
+<span class="hljs-number">4004f</span>2: eb <span class="hljs-number">09</span>           jmp <span class="hljs-number">4004f</span>d &lt;sum+<span class="hljs-number">0x15</span>&gt;
+<span class="hljs-number">4004f</span>4: <span class="hljs-number">48</span> <span class="hljs-number">63</span> ca        movslq %edx,%rcx
+<span class="hljs-number">4004f</span>7: <span class="hljs-number">03</span> <span class="hljs-number">04</span> <span class="hljs-number">8f</span>        add (%rdi,%rcx,<span class="hljs-number">4</span>),%eax
+<span class="hljs-number">4004f</span>a: <span class="hljs-number">83</span> c2 <span class="hljs-number">01</span>        add $<span class="hljs-number">0x1</span>,%edx
+<span class="hljs-number">4004f</span>d: <span class="hljs-number">39</span> f2           cmp %esi,%edx
+<span class="hljs-number">4004f</span>f: <span class="hljs-number">7</span>c f3           jl <span class="hljs-number">4004f</span>4 &lt;sum+<span class="hljs-number">0xc</span>&gt;
+<span class="hljs-number">400501</span>: f3 c3           repz retq
+</code></pre>
+<h4 id="&#x5E38;&#x89C1;&#x7684;&#x6C47;&#x7F16;&#x547D;&#x4EE4;">&#x5E38;&#x89C1;&#x7684;&#x6C47;&#x7F16;&#x547D;&#x4EE4;</h4>
+<table>
+<thead>
+<tr>
+<th>&#x63CF;&#x8FF0;</th>
+<th>&#x6307;&#x4EE4;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>jmp + 32&#x4F4D;&#x7ACB;&#x5373;&#x6570;</td>
+<td>E9 + Imm</td>
+</tr>
+<tr>
+<td>jmp + &#x5185;&#x5B58;&#x5730;&#x5740;</td>
+<td>FF25 + 0x8d8d3a</td>
+</tr>
+<tr>
+<td>call + 32&#x4F4D;&#x7ACB;&#x5373;&#x6570;</td>
+<td>E8 + Imm</td>
+</tr>
+<tr>
+<td>push + 32&#x4F4D;&#x7ACB;&#x5373;&#x6570;</td>
+<td>68 + Imm</td>
+</tr>
+<tr>
+<td>push %rbp</td>
+<td>55</td>
+</tr>
+<tr>
+<td>retq</td>
+<td>C3</td>
+</tr>
+</tbody>
+</table>
 
                                 
                                 </section>
@@ -408,14 +452,10 @@
 
             
                 
-                <a href="5.html" class="navigation navigation-prev " aria-label="Previous page: 5.异常控制流 - 不同进程间的切换与沟通">
+                <a href="noteb.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: b.深入理解计算机系统·语雀">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="7.html" class="navigation navigation-next " aria-label="Next page: 7.虚拟内存与动态内存分配">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -424,7 +464,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"6.系统的输入输出","level":"1.7","depth":1,"next":{"title":"7.虚拟内存与动态内存分配","level":"1.8","depth":1,"path":"docs/7.md","ref":"docs/7.md","articles":[]},"previous":{"title":"5.异常控制流 - 不同进程间的切换与沟通","level":"1.6","depth":1,"path":"docs/5.md","ref":"docs/5.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"docs/6.md","mtime":"2021-02-24T07:41:31.423Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-02-24T07:42:03.373Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"c.汇编指令对应的十六进制表示","level":"1.11.3","depth":2,"next":{"title":"11 读书笔记","level":"1.12","depth":1,"ref":"","articles":[{"title":"a.第七章 - 链接","level":"1.12.1","depth":2,"path":"docs/11a.md","ref":"docs/11a.md","articles":[]}]},"previous":{"title":"b.深入理解计算机系统·语雀","level":"1.11.2","depth":2,"path":"docs/noteb.md","ref":"docs/noteb.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"docs/notec.md","mtime":"2021-02-24T07:41:31.423Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-02-24T07:42:03.373Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
