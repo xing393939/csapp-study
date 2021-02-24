@@ -14,6 +14,7 @@ gitbook.push(function() {
 
 #### 参考资料
 1. [Intel Pentium Instruction Set Reference](https://eun.github.io/Intel-Pentium-Instruction-Set-Reference)
+1. [Is there an x86 opcode for moving an immediate byte to a direct memory location](https://stackoverflow.com/a/33328318)
 
 #### CSAPP上p482的代码示例
 ```c
@@ -46,6 +47,19 @@ gitbook.push(function() {
 |push %rbp       |55      |
 |retq            |C3      |
 
+#### 分析指令mov $0x601018,%edi
+```c
+// 创建a.S文件，内容如下
+mov $0x601018,%edi
 
+// 生成目标文件
+$ as --32 -o a.o a.S
 
+// 反编译可以看到机器指令（其中bf是opcode，18 10 60 00是立即数）
+$ objdump -d a.o
+00000000 <.text>:
+   0:	bf 18 10 60 00       	mov    $0x601018,%edi
 
+// 查看目标文件的16进制表示，可以找到 bf18 1060 00
+$ xdd a.o
+```
