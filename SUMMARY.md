@@ -14,5 +14,6 @@
 * 10.网友笔记
   * [a.CSAPP深入理解计算机系统·CSDN](docs/notea.md)
   * [b.深入理解计算机系统·语雀](docs/noteb.md)
+  * [c.汇编指令对应的十六进制表示](docs/notec.md)
 * 11 读书笔记
   * [a.第七章 - 链接](docs/11a.md)
