@@ -8,3 +8,5 @@
 
 #### 参考资料
 1. [【读薄 CSAPP】](https://wdxtub.com/csapp/thin-csapp-0/2016/04/16/)
+1. [读书推荐 - 博主16年毕业](https://zhenbianshu.github.io/book_list.html)
+1. [读书推荐 - 操作系统的学习顺序](https://hanfeng.ink/post/os_compiler_map/)
