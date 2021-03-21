@@ -578,11 +578,11 @@ gitbook.push(function() {
 <li>options=WCONTINUED&#xFF0C;&#x5982;&#x679C;&#x7EC8;&#x6B62;&#x5B50;&#x8FDB;&#x7A0B;&#x6536;&#x5230;SIGCONT&#xFF0C;&#x8FD4;&#x56DE;&#x6B64;&#x8FDB;&#x7A0B;pid</li>
 </ul>
 </li>
-<li>pid_t waitpid(int *status)&#xFF1B;&#x7B49;&#x4EF7;&#x4E8E;waitpid(-1, &amp;status, NULL)</li>
+<li>pid_t wait(int *status)&#xFF1B;&#x7B49;&#x4EF7;&#x4E8E;waitpid(-1, &amp;status, 0)</li>
 </ol>
 <h4 id="&#x5B89;&#x5168;&#x7684;&#x4FE1;&#x53F7;&#x5904;&#x7406;">&#x5B89;&#x5168;&#x7684;&#x4FE1;&#x53F7;&#x5904;&#x7406;</h4>
 <ol>
-<li>&#x4FE1;&#x53F7;&#x5904;&#x7406;&#x51FD;&#x6570;&#x8FD8;&#x5C3D;&#x53EF;&#x80FD;&#x7684;&#x7B80;&#x5355;</li>
+<li>&#x4FE1;&#x53F7;&#x5904;&#x7406;&#x51FD;&#x6570;&#x8981;&#x5C3D;&#x53EF;&#x80FD;&#x7684;&#x7B80;&#x5355;</li>
 <li>&#x53EA;&#x4F7F;&#x7528;&#x5F02;&#x6B65;&#x4FE1;&#x53F7;&#x5B89;&#x5168;&#x51FD;&#x6570;&#xFF1A;<ul>
 <li>&#x8981;&#x4E48;&#x5B83;&#x662F;&#x53EF;&#x91CD;&#x5165;&#x7684;&#xFF08;&#x53EA;&#x8BBF;&#x95EE;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#xFF09;</li>
 <li>&#x8981;&#x4E48;&#x5B83;&#x4E0D;&#x80FD;&#x88AB;&#x4FE1;&#x53F7;&#x5904;&#x7406;&#x51FD;&#x6570;&#x4E2D;&#x65AD;</li>
@@ -590,25 +590,25 @@ gitbook.push(function() {
 </li>
 <li>&#x4FDD;&#x5B58;&#x548C;&#x6062;&#x590D;errno</li>
 <li>&#x963B;&#x585E;&#x6240;&#x6709;&#x7684;&#x4FE1;&#x53F7;</li>
-<li>&#x7528;volatile&#x58F0;&#x660E;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#xFF0C;&#x907F;&#x514D;&#x7F16;&#x8BD1;&#x5668;&#x628A;&#x7528;&#x5BC4;&#x5B58;&#x5668;&#x6765;&#x5B58;&#x50A8;&#x6B64;&#x5168;&#x5C40;&#x53D8;&#x91CF;</li>
+<li>&#x7528;volatile&#x58F0;&#x660E;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#xFF0C;&#x907F;&#x514D;&#x7F16;&#x8BD1;&#x5668;&#x7528;&#x5BC4;&#x5B58;&#x5668;&#x6765;&#x5B58;&#x50A8;&#x6B64;&#x5168;&#x5C40;&#x53D8;&#x91CF;</li>
 <li>&#x7528;sig_atomic_t&#x58F0;&#x660E;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#xFF0C;&#x4FDD;&#x8BC1;&#x8BFB;&#x5199;&#x662F;&#x539F;&#x5B50;&#x7684;</li>
 </ol>
 <h4 id="&#x6B63;&#x786E;&#x7684;&#x4FE1;&#x53F7;&#x5904;&#x7406;">&#x6B63;&#x786E;&#x7684;&#x4FE1;&#x53F7;&#x5904;&#x7406;</h4>
 <ol>
 <li>&#x5047;&#x8BBE;&#x6709;&#x4E09;&#x4E2A;&#x5B50;&#x8FDB;&#x7A0B;exit&#xFF0C;&#x7236;&#x8FDB;&#x7A0B;&#x5904;&#x7406;SIGCHLD&#x4FE1;&#x53F7;</li>
-<li>&#x4FE1;&#x53F7;&#x5904;&#x7406;&#x51FD;&#x6570;&#x5728;&#x6267;&#x884C;&#x65F6;&#xFF0C;&#x53EF;&#x80FD;&#x4F1A;&#x963B;&#x585E;&#x5E76;&#x4E22;&#x5F03;SIGCHLD&#x4FE1;&#x53F7;&#xFF0C;&#x56E0;&#x4E3A;&#x4FE1;&#x53F7;&#x662F;&#x6CA1;&#x6709;&#x961F;&#x5217;&#x7684;</li>
-<li>&#x6B63;&#x786E;&#x65B9;&#x5F0F;&#xFF1A;&#x5728;&#x5904;&#x7406;&#x51FD;&#x6570;&#x4E2D;&#x591A;&#x6B21;&#x8C03;&#x7528;waitpid&#x51FD;&#x6570;&#x4FDD;&#x8BC1;&#x83B7;&#x53D6;&#x6240;&#x6709;exited&#x5B50;&#x8FDB;&#x7A0B;</li>
+<li>&#x4FE1;&#x53F7;&#x5904;&#x7406;&#x51FD;&#x6570;&#x5728;&#x6267;&#x884C;&#x65F6;&#xFF0C;&#x53EF;&#x80FD;&#x4F1A;&#x963B;&#x585E;&#x5E76;&#x4E22;&#x5F03;SIGCHLD&#x4FE1;&#x53F7;&#xFF0C;&#x56E0;&#x4E3A;&#x4FE1;&#x53F7;&#x662F;&#x6CA1;&#x6709;&#x961F;&#x5217;&#x7684;&#xFF1A;&#x56FE;8-36</li>
+<li>&#x6B63;&#x786E;&#x65B9;&#x5F0F;&#xFF1A;&#x5728;&#x5904;&#x7406;&#x51FD;&#x6570;&#x4E2D;&#x5FAA;&#x73AF;&#x8C03;&#x7528;waitpid&#x51FD;&#x6570;&#x4FDD;&#x8BC1;&#x83B7;&#x53D6;&#x6240;&#x6709;exited&#x5B50;&#x8FDB;&#x7A0B;</li>
 </ol>
 <h4 id="&#x5E76;&#x53D1;&#x7F16;&#x7A0B;&#x4E2D;&#x7684;&#x4FE1;&#x53F7;&#x5904;&#x7406;">&#x5E76;&#x53D1;&#x7F16;&#x7A0B;&#x4E2D;&#x7684;&#x4FE1;&#x53F7;&#x5904;&#x7406;</h4>
 <ol>
 <li>&#x5047;&#x8BBE;&#x7236;&#x8FDB;&#x7A0B;fork&#x540E;&#x6267;&#x884C;addjob&#xFF0C;&#x5904;&#x7406;SIGCHLD&#x4FE1;&#x53F7;&#x65F6;&#x6267;&#x884C;deletejob</li>
-<li>&#x53EF;&#x80FD;&#x4F1A;&#x51FA;&#x73B0;&#xFF1A;&#x5728;&#x7236;&#x8FDB;&#x7A0B;addjob&#x524D;&#xFF0C;&#x5B50;&#x8FDB;&#x7A0B;&#x5DF2;&#x7ECF;exited&#xFF0C;&#x89E6;&#x53D1;SIGCHLD&#x4FE1;&#x53F7;&#x800C;&#x5148;&#x6267;&#x884C;&#x4E86;deletejob</li>
+<li>&#x53EF;&#x80FD;&#x4F1A;&#x51FA;&#x73B0;&#xFF1A;&#x5728;&#x7236;&#x8FDB;&#x7A0B;addjob&#x524D;&#xFF0C;&#x5B50;&#x8FDB;&#x7A0B;&#x5DF2;&#x7ECF;exited&#xFF0C;&#x89E6;&#x53D1;SIGCHLD&#x4FE1;&#x53F7;&#x800C;&#x5148;&#x6267;&#x884C;&#x4E86;deletejob&#xFF1A;&#x56FE;8-39</li>
 <li>&#x6B63;&#x786E;&#x65B9;&#x5F0F;&#xFF1A;&#x5728;fork&#x524D;~addjob&#x540E;&#xFF0C;&#x90FD;&#x8981;&#x963B;&#x585E;SIGCHLD&#x4FE1;&#x53F7;&#x3002;&#x540C;&#x65F6;&#x8981;&#x6CE8;&#x610F;&#x5B50;&#x8FDB;&#x7A0B;&#x6267;&#x884C;&#x524D;&#x8981;&#x6062;&#x590D;SIGCHLD&#x4FE1;&#x53F7;&#x3002;</li>
 </ol>
 <h4 id="&#x663E;&#x5F0F;&#x7B49;&#x5F85;&#x4FE1;&#x53F7;">&#x663E;&#x5F0F;&#x7B49;&#x5F85;&#x4FE1;&#x53F7;</h4>
 <ol>
 <li>&#x5047;&#x8BBE;&#x7236;&#x8FDB;&#x7A0B;fork&#x540E;&#x8981;&#x7B49;&#x5F85;&#x5B50;&#x8FDB;&#x7A0B;&#x5B8C;&#x6210;&#x540E;&#x6267;&#x884C;xxx&#x3002;&#xFF08;&#x4E0D;&#x80FD;&#x4F7F;&#x7528;waitpid&#xFF1F;&#xFF09;</li>
-<li>&#x5982;&#x679C;&#x4F7F;&#x7528;while sleep&#x5FAA;&#x73AF;&#x5219;&#x8017;&#x8D39;&#x8D44;&#x6E90;&#xFF1B;&#x5982;&#x679C;&#x4F7F;&#x7528;while pause&#x53EF;&#x80FD;&#x4F1A;&#x51FA;&#x73B0;&#x5B50;&#x8FDB;&#x7A0B;&#x5728;while&#x548C;pause&#x4E2D;&#x95F4;&#x7ED3;&#x675F;&#x3002;</li>
+<li>&#x5982;&#x679C;&#x4F7F;&#x7528;while sleep&#x5FAA;&#x73AF;&#x5219;&#x8017;&#x8D39;&#x8D44;&#x6E90;&#xFF1B;&#x5982;&#x679C;&#x4F7F;&#x7528;while pause&#x53EF;&#x80FD;&#x4F1A;&#x51FA;&#x73B0;&#x5B50;&#x8FDB;&#x7A0B;&#x5728;while&#x548C;pause&#x4E2D;&#x95F4;&#x7ED3;&#x675F;&#xFF1A;&#x56FE;8-41</li>
 <li>&#x6B63;&#x786E;&#x65B9;&#x5F0F;&#xFF1A;&#x4F7F;&#x7528;&#x539F;&#x5B50;&#x64CD;&#x4F5C;sigsuspended&#xFF0C;&#x5B83;&#x7B49;&#x4EF7;&#x4E8E;&#x5148;&#x89E3;&#x9664;&#x963B;&#x585E;SIGCHLD&#x4FE1;&#x53F7;&#x3001;pause&#x3001;&#x6062;&#x590D;&#x963B;&#x585E;SIGCHLD&#x4FE1;&#x53F7;</li>
 </ol>
 
@@ -654,7 +654,7 @@ gitbook.push(function() {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"08.第八章 - 异常控制流","level":"1.12.8","depth":2,"next":{"title":"09.第九章 - 虚拟内存","level":"1.12.9","depth":2,"path":"docs/11-09.md","ref":"docs/11-09.md","articles":[]},"previous":{"title":"07.第七章 - 链接","level":"1.12.7","depth":2,"path":"docs/11-07.md","ref":"docs/11-07.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"docs/11-08.md","mtime":"2021-03-21T03:54:36.177Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-03-21T03:55:01.089Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"08.第八章 - 异常控制流","level":"1.12.8","depth":2,"next":{"title":"09.第九章 - 虚拟内存","level":"1.12.9","depth":2,"path":"docs/11-09.md","ref":"docs/11-09.md","articles":[]},"previous":{"title":"07.第七章 - 链接","level":"1.12.7","depth":2,"path":"docs/11-07.md","ref":"docs/11-07.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"docs/11-08.md","mtime":"2021-03-21T10:14:24.835Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-03-21T10:14:57.533Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
