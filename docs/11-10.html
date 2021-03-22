@@ -556,11 +556,36 @@ gitbook.push(function() {
 </ol>
 <h4 id="rio&#x5305;&#x5904;&#x7406;&#x8BFB;&#x5199;">RIO&#x5305;&#x5904;&#x7406;&#x8BFB;&#x5199;</h4>
 <ol>
+<li><a href="https://www.cnblogs.com/wzzkaifa/p/7281005.html" target="_blank">Linux IO&#x64CD;&#x4F5C;&#x2014;&#x2014;RIO&#x5305;</a></li>
 <li>RIO &#x63D0;&#x4F9B;&#x4E86;&#x4E24;&#x7C7B;&#x4E0D;&#x540C;&#x7684;&#x51FD;&#x6570;&#xFF1A;<ul>
-<li>&#x65E0;&#x7F13;&#x51B2;&#x7684;&#x8F93;&#x5165;&#x8F93;&#x51FA;&#x51FD;&#x6570;&#xFF1A;&#x5904;&#x7406;&#x4E0D;&#x8DB3;&#x503C;&#x3001;&#x5904;&#x7406;EINTR&#x9519;&#x8BEF;</li>
-<li>&#x5E26;&#x7F13;&#x51B2;&#x7684;&#x8F93;&#x5165;&#x51FD;&#x6570;</li>
+<li>&#x65E0;&#x7F13;&#x51B2;&#x7684;&#x8F93;&#x5165;&#x8F93;&#x51FA;&#x51FD;&#x6570;&#xFF1A;&#x5904;&#x7406;&#x4E0D;&#x8DB3;&#x503C;&#x3001;&#x5904;&#x7406;EINTR&#x9519;&#x8BEF;<ul>
+<li>ssize_t rio_readn(int fd, void *usrbuf, size_t n);</li>
+<li>ssize_t rio_writen(int fd, void *usrbuf, size_t n);</li>
 </ul>
 </li>
+<li>&#x5E26;&#x7F13;&#x51B2;&#x7684;&#x8F93;&#x5165;&#x51FD;&#x6570;&#xFF1A;<ul>
+<li>void rio_readinitb(rio_t *rp, int fd); //&#x5173;&#x8054;fd&#x5230;rp&#x5BF9;&#x8C61;</li>
+<li>ssize_t rio_readlineb(rio_t <em>rp, void </em>usrbuf, size_t maxlen); //&#x5C01;&#x88C5;&#x4E86;&#x8BFB;&#x53D6;&#x4E00;&#x884C;&#x6587;&#x672C;&#x7684;&#x903B;&#x8F91;&#xFF0C;&#x51CF;&#x5C11;read&#x7CFB;&#x7EDF;&#x8C03;&#x7528;</li>
+<li>ssize_t rio_readnb(rio_t <em>rp, void </em>usrbuf, size_t n); //&#x6709;&#x5229;&#x4E8E;&#x591A;&#x6B21;&#x8BFB;&#x5C0F;&#x4E8E;&#x7F13;&#x51B2;&#x6C60;&#x7684;&#x6570;&#x636E;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>&#x6CA1;&#x6709;&#x5E26;&#x7F13;&#x51B2;&#x7684;&#x8F93;&#x51FA;&#x51FD;&#x6570;&#xFF0C;&#x56E0;&#x4E3A;write&#x7684;&#x65F6;&#x5019;&#x6709;&#x7F13;&#x51B2;&#x53EF;&#x80FD;&#x5BFC;&#x81F4;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x5757;&#x8FD8;&#x5728;&#x7F13;&#x5B58;&#x4E2D;</li>
+</ol>
+<h4 id="&#x53EF;&#x91CD;&#x5165;&#x3001;&#x5F02;&#x6B65;&#x4FE1;&#x53F7;&#x5B89;&#x5168;&#x548C;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;">&#x53EF;&#x91CD;&#x5165;&#x3001;&#x5F02;&#x6B65;&#x4FE1;&#x53F7;&#x5B89;&#x5168;&#x548C;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;</h4>
+<ol>
+<li><a href="https://www.cnblogs.com/wuchanming/p/4020184.html" target="_blank">linux&#x53EF;&#x91CD;&#x5165;&#x3001;&#x5F02;&#x6B65;&#x4FE1;&#x53F7;&#x5B89;&#x5168;&#x548C;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;</a></li>
+<li>&#x53EF;&#x91CD;&#x5165; = &#x5F02;&#x6B65;&#x4FE1;&#x53F7;&#x5B89;&#x5168;</li>
+<li>&#x53EF;&#x91CD;&#x5165;&#x4E00;&#x5B9A;&#x662F;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#x7684;</li>
+<li>&#x53EF;&#x91CD;&#x5165;&#x7684;&#x51FD;&#x6570;&#xFF1A;&#x7B80;&#x5355;&#x6765;&#x8BF4;&#x5C31;&#x662F;&#x53EF;&#x4EE5;&#x88AB;&#x4E2D;&#x65AD;&#x7684;&#x51FD;&#x6570;&#x3002;&#x591A;&#x4EFB;&#x52A1;&#x5E76;&#x53D1;&#x8C03;&#x7528;&#x5B83;&#x4E5F;&#x4E0D;&#x4F1A;&#x6570;&#x636E;&#x9519;&#x8BEF;&#x3002;<ul>
+<li>&#x53CD;&#x4F8B;&#xFF1A;malloc&#x51FD;&#x6570;&#x867D;&#x7136;&#x662F;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#x7684;&#xFF0C;&#x4F46;&#x7A0B;&#x5E8F;&#x6B63;&#x5728;&#x6267;&#x884C;malloc&#x65F6;&#x88AB;signal&#x5904;&#x7406;&#x51FD;&#x6570;&#x6253;&#x65AD;&#xFF0C;signal&#x5904;&#x7406;&#x51FD;&#x6570;&#x91CC;&#x9762;&#x4E5F;&#x6267;&#x884C;malloc&#xFF0C;&#x4F1A;&#x51FA;&#x9519;&#x3002;</li>
+</ul>
+</li>
+<li>&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#x7684;&#x51FD;&#x6570;&#xFF1A;&#x5728;&#x540C;&#x4E00;&#x65F6;&#x523B;&#x53EF;&#x4EE5;&#x88AB;&#x591A;&#x4E2A;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#x7684;&#x8C03;&#x7528;&#x3002;</li>
+<li>&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x4E2D;&#x53EA;&#x6709;&#x4E00;&#x4E2A;errno &#x53D8;&#x91CF;</li>
+<li>&#x5F88;&#x591A;&#x51FD;&#x6570;&#x5E76;&#x4E0D;&#x662F;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#x7684;&#xFF0C;&#x56E0;&#x4E3A;&#x4ED6;&#x4EEC;&#x8FD4;&#x56DE;&#x7684;&#x6570;&#x636E;&#x662F;&#x5B58;&#x653E;&#x5728;&#x9759;&#x6001;&#x7684;&#x5185;&#x5B58;&#x7F13;&#x51B2;&#x533A;&#x4E2D;&#x7684;&#x3002;&#x901A;&#x8FC7;&#x4FEE;&#x6539;&#x63A5;&#x53E3;&#xFF0C;&#x7531;&#x8C03;&#x7528;&#x8005;&#x81EA;&#x884C;&#x63D0;&#x4F9B;&#x7F13;&#x51B2;&#x533A;&#x5C31;&#x53EF;&#x4EE5;&#x4F7F;&#x8FD9;&#x4E9B;&#x51FD;&#x6570;&#x53D8;&#x4E3A;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#x7684;&#x3002;</li>
+<li>&#x53EF;&#x91CD;&#x5165;&#x4E0E;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#x7684;&#x533A;&#x522B;&#x4F53;&#x73B0;&#x5728;&#x80FD;&#x5426;&#x5728;signal&#x5904;&#x7406;&#x51FD;&#x6570;&#x4E2D;&#x88AB;&#x8C03;&#x7528;&#x7684;&#x95EE;&#x9898;&#x4E0A;&#xFF0C;&#x53EF;&#x91CD;&#x5165;&#x51FD;&#x6570;&#x5728;signal&#x5904;&#x7406;&#x51FD;&#x6570;&#x4E2D;&#x53EF;&#x4EE5;&#x88AB;&#x5B89;&#x5168;&#x8C03;&#x7528;&#x3002;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#x51FD;&#x6570;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8BBE;&#x7F6E;&#x4FE1;&#x53F7;&#x963B;&#x585E;&#x7B49;&#x65B9;&#x6CD5;&#x5B9E;&#x73B0;&#x53EF;&#x91CD;&#x5165;&#x3002;</li>
 </ol>
 
                                 
@@ -605,7 +630,7 @@ gitbook.push(function() {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"10.第十章 - 系统IO","level":"1.12.10","depth":2,"next":{"title":"11.第十一章 - 网络编程","level":"1.12.11","depth":2,"path":"docs/11-11.md","ref":"docs/11-11.md","articles":[]},"previous":{"title":"09.第九章 - 虚拟内存","level":"1.12.9","depth":2,"path":"docs/11-09.md","ref":"docs/11-09.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"docs/11-10.md","mtime":"2021-03-21T10:14:24.835Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-03-21T10:14:57.533Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"10.第十章 - 系统IO","level":"1.12.10","depth":2,"next":{"title":"11.第十一章 - 网络编程","level":"1.12.11","depth":2,"path":"docs/11-11.md","ref":"docs/11-11.md","articles":[]},"previous":{"title":"09.第九章 - 虚拟内存","level":"1.12.9","depth":2,"path":"docs/11-09.md","ref":"docs/11-09.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"docs/11-10.md","mtime":"2021-03-22T09:57:37.428Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-03-22T09:58:11.952Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
