@@ -527,8 +527,27 @@ gitbook.push(function() {
 <h3 id="&#x7B2C;&#x5341;&#x4E00;&#x7AE0;---&#x7F51;&#x7EDC;&#x7F16;&#x7A0B;">&#x7B2C;&#x5341;&#x4E00;&#x7AE0; - &#x7F51;&#x7EDC;&#x7F16;&#x7A0B;</h3>
 <h4 id="&#x53C2;&#x8003;&#x8D44;&#x6599;">&#x53C2;&#x8003;&#x8D44;&#x6599;</h4>
 <ol>
-<li><a href="https://blog.csdn.net/qq_38410730/article/details/80197299" target="_blank">C&#x8BED;&#x8A00;&#x51FD;&#x6570;&#x4E2D;&#x7684;&#x53D8;&#x91CF;&#xFF08;&#x5305;&#x62EC;&#xFF1A;&#x4F5C;&#x7528;&#x57DF;&#x3001;&#x5B58;&#x50A8;&#x7C7B;&#x578B;&#xFF09;</a></li>
-<li><a href="https://www.cnblogs.com/pannengzhi/p/2018-04-09-about-got-plt.html" target="_blank">&#x6DF1;&#x5165;&#x4E86;&#x89E3;GOT,PLT&#x548C;&#x52A8;&#x6001;&#x94FE;&#x63A5;</a></li>
+<li><a href="https://wdxtub.com/csapp/thin-csapp-8/2016/04/16/" target="_blank">&#x3010;&#x8BFB;&#x8584; CSAPP&#x3011;&#x634C; &#x7F51;&#x7EDC;&#x7F16;&#x7A0B;</a></li>
+<li><a href="http://akaedu.github.io/book/ch36s01.html" target="_blank">Linux C&#x7F16;&#x7A0B;&#x4E00;&#x7AD9;&#x5F0F;&#x5B66;&#x4E60; - TCP/IP&#x534F;&#x8BAE;&#x6808;&#x4E0E;&#x6570;&#x636E;&#x5305;&#x5C01;&#x88C5;</a></li>
+<li><a href="https://www.cnblogs.com/vamei/archive/2012/12/05/2802811.html" target="_blank">&#x534F;&#x8BAE;&#x68EE;&#x6797;</a></li>
+</ol>
+<h4 id="&#x57FA;&#x7840;">&#x57FA;&#x7840;</h4>
+<ol>
+<li>&#x6570;&#x636E;&#x5305;&#x4E00;&#x822C;&#x6709;&#x4E09;&#x90E8;&#x5206;&#xFF1A;data + PH + FH<ol>
+<li>data&#xFF1A;&#x53EF;&#x4EE5;&#x518D;&#x5206;&#x4E3A;tcp&#x5934; + &#x4E3B;&#x4F53;&#x3001;udp&#x5934; + &#x4E3B;&#x4F53;</li>
+<li>PH&#xFF1A;Internet packet header&#x3002;ipv4&#xFF1A;2&#x5B57;&#x8282;&#x5934;&#x90E8;&#x4FE1;&#x606F; + 2&#x5B57;&#x8282;&#x957F;&#x5EA6; + 1&#x5B57;&#x8282;&#x534F;&#x8BAE; + 7&#x5B57;&#x8282;&#x5176;&#x4ED6; + 4&#x5B57;&#x8282;srcIP + 4&#x81EA;&#x5DF1;distIP<ul>
+<li>&#x534F;&#x8BAE;&#xFF1A;TCP</li>
+<li>&#x534F;&#x8BAE;&#xFF1A;UDP</li>
+<li>&#x534F;&#x8BAE;&#xFF1A;ICMP</li>
+</ul>
+</li>
+<li>FH&#xFF1A;LAN frame header&#x3002;6&#x5B57;&#x8282;src mac addr + 6&#x5B57;&#x8282; dist mac address + 2&#x5B57;&#x8282;type<ul>
+<li>type=0800&#xFF1A;ip&#x5E27;</li>
+<li>type=0806&#xFF1A;arp&#x5E27;</li>
+</ul>
+</li>
+</ol>
+</li>
 </ol>
 
                                 
@@ -573,7 +592,7 @@ gitbook.push(function() {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"11.第十一章 - 网络编程","level":"1.12.11","depth":2,"next":{"title":"12.第十二章 - 并发编程","level":"1.12.12","depth":2,"path":"docs/11-12.md","ref":"docs/11-12.md","articles":[]},"previous":{"title":"10.第十章 - 系统IO","level":"1.12.10","depth":2,"path":"docs/11-10.md","ref":"docs/11-10.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"docs/11-11.md","mtime":"2021-03-24T07:24:40.080Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-03-24T07:25:15.654Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"11.第十一章 - 网络编程","level":"1.12.11","depth":2,"next":{"title":"12.第十二章 - 并发编程","level":"1.12.12","depth":2,"path":"docs/11-12.md","ref":"docs/11-12.md","articles":[]},"previous":{"title":"10.第十章 - 系统IO","level":"1.12.10","depth":2,"path":"docs/11-10.md","ref":"docs/11-10.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"docs/11-11.md","mtime":"2021-03-27T11:28:23.525Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-03-27T11:28:55.633Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
