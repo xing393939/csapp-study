@@ -13,7 +13,7 @@
   * [8.网络编程](docs/8.md)
   * [9.并行和同步](docs/9.md)
 * 2.网友笔记
-  * [a.CSAPP深入理解计算机系统·CSDN](docs/notea.md)
+  * [a.深入理解计算机系统·CSDN](docs/notea.md)
   * [b.深入理解计算机系统·语雀](docs/noteb.md)
   * [c.汇编指令对应的十六进制表示](docs/notec.md)
   * [d.虚拟内存和内存分配](docs/noted.md)
